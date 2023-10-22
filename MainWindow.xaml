@@ -8,6 +8,18 @@
         mc:Ignorable="d"
         Title="ADHD Planner" Height="450" Width="800"
         WindowState="Maximized">
+    <Window.Resources>
+        <Style TargetType="ListViewItem" >
+            <Setter Property="Background" Value="{Binding Color}" />
+            <Setter Property="MinWidth" Value="350"/>
+        </Style>
+
+        <Style TargetType="userControls:Task">
+            <Setter Property="MinHeight" Value="110"/>
+            <Setter Property="Width" Value="340" />
+        </Style>
+    </Window.Resources>
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -22,9 +34,8 @@
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
 
-                    <ListView Background="AliceBlue" ItemsSource="{Binding Tasks}">
-                        <userControls:Task Title="Clean the dishes" Color="Lime"/>
-                        <userControls:Task Title="Clean the dishes and drink a cope" HorizontalAlignment="Stretch" Background="Aquamarine"/>
+                    <ListView Background="AliceBlue" ItemsSource="{Binding Tasks}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                        <!--<userControls:Task Title="asdas" EstimatedTime="12:12:12" Color="blue"/>-->
                     </ListView>
 
                 </Grid>
@@ -36,7 +47,8 @@
             <TabItem Header="Pomodoro" FontSize="20"></TabItem>
         </TabControl>
 
-        <TextBlock Grid.Row="1" Text="7 / 11" HorizontalAlignment="Right" FontSize="15" Margin="0, 0, 10, 0"/>
+        <TextBlock Grid.Row="1" Text="7 / 11" HorizontalAlignment="Right" FontSize="15" Margin="0, 0, 10, 0"
+                   TextWrapping="Wrap"/>
 
     </Grid>
 </Window>

@@ -40,14 +40,22 @@ namespace ADHDPlanner.View.UserControls
             }
         }
 
-        private TimeOnly estimatedTime;
+        private string estimatedTime;
 
-        public TimeOnly EstimatedTime
+        public string EstimatedTime
         {
             get { return estimatedTime; }
             set 
             {
-                estimatedTime = value; 
+                if (TimeOnly.TryParse(value, out TimeOnly time))
+                {
+                    estimatedTime = time.ToLongTimeString();
+                }
+                else
+                {
+                    estimatedTime = "-----";
+                }
+
                 OnPropertyChanged();
             }
         }
