@@ -4,9 +4,39 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ADHDPlanner"
+        xmlns:userControls="clr-namespace:ADHDPlanner.View.UserControls"
         mc:Ignorable="d"
         Title="ADHD Planner" Height="450" Width="800"
         WindowState="Maximized">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="25"/>
+        </Grid.RowDefinitions>
+        
+        <TabControl>
+            <TabItem Header="All" FontSize="20">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="350"/>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <ListView Background="AliceBlue" ItemsSource="{Binding Tasks}">
+                        <userControls:Task Title="Clean the dishes" Color="Lime"/>
+                        <userControls:Task Title="Clean the dishes and drink a cope" HorizontalAlignment="Stretch" Background="Aquamarine"/>
+                    </ListView>
+
+                </Grid>
+            </TabItem>
+            
+            <TabItem Header="Add task" FontSize="20"/>
+            <TabItem Header="Eisenhower matrix" FontSize="20"></TabItem>
+            
+            <TabItem Header="Pomodoro" FontSize="20"></TabItem>
+        </TabControl>
+
+        <TextBlock Grid.Row="1" Text="7 / 11" HorizontalAlignment="Right" FontSize="15" Margin="0, 0, 10, 0"/>
+
     </Grid>
 </Window>
