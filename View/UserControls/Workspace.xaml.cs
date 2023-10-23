@@ -1,7 +1,9 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Windows;
 using System.Windows.Controls;
-using static System.Net.Mime.MediaTypeNames;
+using System.Windows.Controls.Primitives;
+using static ADHDPlanner.View.UserControls.Task;
 
 namespace ADHDPlanner.View.UserControls
 {
@@ -48,7 +50,22 @@ namespace ADHDPlanner.View.UserControls
             else if (stage == Task.Stage.Defined)
                 btnUpdate.Content = "Finish";
             else
-                btnUpdate.Content = "Well done!";
+                btnUpdate.Content = "Reverse";
+        }
+
+        public void Set()
+        {
+            Title.Clear();
+
+            descriptionTBox.Clear();
+            listTBox.Clear();
+
+            timeTB.Text = "hh:mm:ss";
+
+            stageCB.SelectedIndex = 0;
+            stateCB.SelectedIndex = 3;
+
+            btnUpdate.Content = "Define";
         }
 
         public void SaveTask()
@@ -67,11 +84,6 @@ namespace ADHDPlanner.View.UserControls
             }
         }
 
-        public void SetTask(Task task)
-        {
-            CurrentTask = task;
-        }
-
         private void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
@@ -79,6 +91,35 @@ namespace ADHDPlanner.View.UserControls
 
         private void Delete_Click(object sender, System.Windows.RoutedEventArgs e)
         {
+            Set();
+        }
+
+        private void btnUpdate_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            if (CurrentTask.CurrentStage == Task.Stage.Undefined)
+            {
+                btnUpdate.Content = "Define";
+                CurrentTask.CurrentStage++;
+            }
+            else if (CurrentTask.CurrentStage == Task.Stage.Defined)
+            {
+                btnUpdate.Content = "Finish";
+                CurrentTask.CurrentStage++;
+            }
+            else
+            {
+                btnUpdate.Content = "Finish";
+                currentTask.CurrentStage--;
+            }
+
+            Set(CurrentTask.CurrentStage);
+            SaveTask();
+        }
+
+        public event RoutedEventHandler Click
+        {
+            add { btnUpdate.AddHandler(ButtonBase.ClickEvent, value); }
+            remove { btnUpdate.AddHandler(ButtonBase.ClickEvent, value); }
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using ADHDPlanner.View.UserControls;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using UserControls = ADHDPlanner.View.UserControls;
@@ -51,12 +52,24 @@ namespace ADHDPlanner
 
         private void workspace_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("WEEE");
+            if (e.OriginalSource.ToString() == "System.Windows.Controls.Button: X")
+            {
+                if (taskView.SelectedItem != null)
+                {
+                    Tasks.RemoveAt(taskView.SelectedIndex);
+                }
+            }
+
+            UpdateProgressBar();
         }
 
-        private void workspace_Click_1(object sender, RoutedEventArgs e)
+        private void UpdateProgressBar()
         {
+            progressBar.Text = "";
 
+            progressBar.Text += Tasks.Where(e => e.CurrentStage == Task.Stage.Finished).Count();
+            progressBar.Text += " / ";
+            progressBar.Text += Tasks.Count;
         }
     }
 }

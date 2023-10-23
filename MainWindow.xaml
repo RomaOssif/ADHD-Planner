@@ -28,12 +28,12 @@
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
 
-                    <ListView Background="AliceBlue" ItemsSource="{Binding Tasks}" Name="taskView"
+                    <ListView Background="AliceBlue" ItemsSource="{Binding Tasks}" Name="taskView" 
                               ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                               ScrollViewer.VerticalScrollBarVisibility="Hidden" SelectionChanged="taskView_SelectionChanged">
                     </ListView>
 
-                    <userControls:Workspace Grid.Column="1" x:Name="workspace" ButtonBase.Click="workspace_Click" />
+                    <userControls:Workspace Grid.Column="1" x:Name="workspace" ButtonBase.Click="workspace_Click"/>
 
                 </Grid>
             </TabItem>
@@ -44,6 +44,7 @@
             <TabItem Header="Pomodoro" FontSize="20"></TabItem>
         </TabControl>
 
-        <TextBlock Grid.Row="1" Text="7 / 11" HorizontalAlignment="Right" FontSize="15" Margin="0, 0, 10, 0"/>
+        <TextBlock Grid.Row="1" FontFamily="Courier" HorizontalAlignment="Right" Text="7 / 11"
+                   FontSize="15" Margin="0, 2, 10, 0" Name="progressBar"/>
     </Grid>
 </Window>

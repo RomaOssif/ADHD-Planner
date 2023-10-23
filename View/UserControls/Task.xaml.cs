@@ -53,7 +53,6 @@ namespace ADHDPlanner.View.UserControls
         {
             DataContext = this;
 
-            //Color = "#90B494";
             CurrentStage = Stage.Undefined;
             TaskState = State.NotImportantNotUrgent;
 
@@ -153,10 +152,6 @@ namespace ADHDPlanner.View.UserControls
                 orderedDescription = value; 
                 OnPropertyChanged();
             }
-        }
-
-        private void DoThingy()
-        {
         }
 
         private void OnPropertyChanged([CallerMemberName] string propertyName = null)

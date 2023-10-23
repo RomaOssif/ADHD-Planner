@@ -31,7 +31,7 @@
             </Border>
             
             <Button Grid.Column="2" FontSize="35" FontWeight="DemiBold" Background="LightGreen" FontFamily="Coilare"
-                    Opacity="0.95" Content="Define" Name="btnUpdate"/>
+                    Opacity="0.95" Content="Define" Name="btnUpdate" Click="btnUpdate_Click"/>
         </Grid>
 
         <Grid Grid.Row="1" >
