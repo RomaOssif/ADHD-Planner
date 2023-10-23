@@ -17,10 +17,10 @@ namespace ADHDPlanner.View.UserControls
 
         public enum State
         {
-            ImportantUrgent = 4,
-            ImportantNotUrgent = 3,
+            ImportantUrgent = 0,
+            ImportantNotUrgent = 1,
             NotImportantUrgent = 2,
-            NotImportantNotUrgent = 0
+            NotImportantNotUrgent = 3
         }
 
         private State taskState;
@@ -43,21 +43,9 @@ namespace ADHDPlanner.View.UserControls
             set 
             { 
                 currentStage = value;
-
-                if (currentStage == Stage.Undefined)
-                {
-                    Color = "#90B494"; //"#"
-                }
-                else if (currentStage == Stage.Defined)
-                {
-                    Color = "#4E7145"; //"#DFBB34"
-                }
-                else if (currentStage == Stage.Finished)
-                {
-                    Color = "#bf212f"; //4E7145
-                }
-
                 OnPropertyChanged();
+
+                ChangeColor();
             }
         }
 
@@ -65,8 +53,9 @@ namespace ADHDPlanner.View.UserControls
         {
             DataContext = this;
 
-            color = "#90B494";
-            currentStage = Stage.Undefined;
+            //Color = "#90B494";
+            CurrentStage = Stage.Undefined;
+            TaskState = State.NotImportantNotUrgent;
 
             InitializeComponent();
         }
@@ -79,7 +68,6 @@ namespace ADHDPlanner.View.UserControls
 
             InitializeComponent();
         }
-
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
@@ -107,6 +95,22 @@ namespace ADHDPlanner.View.UserControls
             }
         }
 
+        private void ChangeColor()
+        {
+            if (currentStage == Stage.Undefined)
+            {
+                Color = "#9F9AA4"; 
+            }
+            else if (currentStage == Stage.Defined)
+            {
+                Color = "#FFA836";
+            }
+            else if (currentStage == Stage.Finished)
+            {
+                Color = "#507B58";
+            }
+        }
+
         private string estimatedTime;
 
         public string EstimatedTime
@@ -120,7 +124,7 @@ namespace ADHDPlanner.View.UserControls
                 }
                 else
                 {
-                    estimatedTime = "-----";
+                    estimatedTime = "hh:mm:ss";
                 }
 
                 OnPropertyChanged();
@@ -149,6 +153,10 @@ namespace ADHDPlanner.View.UserControls
                 orderedDescription = value; 
                 OnPropertyChanged();
             }
+        }
+
+        private void DoThingy()
+        {
         }
 
         private void OnPropertyChanged([CallerMemberName] string propertyName = null)

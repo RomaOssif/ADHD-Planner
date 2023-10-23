@@ -33,7 +33,7 @@
                               ScrollViewer.VerticalScrollBarVisibility="Hidden" SelectionChanged="taskView_SelectionChanged">
                     </ListView>
 
-                    <userControls:Workspace Grid.Column="1" x:Name="workspace"/>
+                    <userControls:Workspace Grid.Column="1" x:Name="workspace" ButtonBase.Click="workspace_Click" />
 
                 </Grid>
             </TabItem>

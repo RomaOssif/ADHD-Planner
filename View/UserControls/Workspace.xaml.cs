@@ -32,51 +32,42 @@ namespace ADHDPlanner.View.UserControls
 
         public void Set(Task.Stage stage)
         {
+            Title.Text = CurrentTask.Title;
+
+            descriptionTBox.Text = CurrentTask.Description;
+            listTBox.Text = CurrentTask.OrderedDescription;
+
+            if (currentTask.EstimatedTime != "hh:mm:ss")
+                timeTB.Text = CurrentTask.EstimatedTime;
+
+            stageCB.SelectedIndex = (int)currentTask.CurrentStage;
+            stateCB.SelectedIndex = (int)currentTask.TaskState;
+
             if (stage == Task.Stage.Undefined)
-            {
-                Title.Text = "Name...";
                 btnUpdate.Content = "Define";
-                
-                descriptionTBox.Text = "Type here :)";
-                listTBox.Text = "Second space for typing. . .";
-
-                timeTB.Text = "hh:mm:ss";
-                stageCB.SelectedItem = stageCB.Items[0];
-                stateCB.SelectedItem = stateCB.Items[3];
-            }
             else if (stage == Task.Stage.Defined)
-            {
-                Title.Text = CurrentTask.Title;
                 btnUpdate.Content = "Finish";
-
-                descriptionTBox.Text = CurrentTask.Description;
-                listTBox.Text = CurrentTask.OrderedDescription;
-
-                if (currentTask.EstimatedTime != "hh:mm:ss")
-                    timeTB.Text = CurrentTask.EstimatedTime;
-
-                stageCB.SelectedItem = currentTask.CurrentStage; //to fix!!
-                stateCB.SelectedItem = currentTask.TaskState; //to fix!!
-            }
             else
-            {
-                Title.Text = CurrentTask.Title;
                 btnUpdate.Content = "Well done!";
-
-                descriptionTBox.Text = CurrentTask.Description;
-                listTBox.Text = CurrentTask.OrderedDescription;
-
-                if (currentTask.EstimatedTime != "hh:mm:ss")
-                    timeTB.Text = CurrentTask.EstimatedTime;
-
-                stageCB.SelectedValue = currentTask.CurrentStage; //to fix!!
-                stateCB.SelectedItem = Task.Stage.Finished; //to fix!!
-            }
-
-
         }
 
-        private void SetTask(Task task)
+        public void SaveTask()
+        {
+            if (CurrentTask != null)
+            {
+                currentTask.Title = Title.Text;
+
+                currentTask.Description = descriptionTBox.Text;
+                currentTask.OrderedDescription = listTBox.Text;
+
+                currentTask.EstimatedTime = timeTB.Text;
+
+                currentTask.CurrentStage = (Task.Stage)stageCB.SelectedIndex;
+                currentTask.TaskState = (Task.State)stateCB.SelectedIndex;
+            }
+        }
+
+        public void SetTask(Task task)
         {
             CurrentTask = task;
         }
@@ -84,6 +75,10 @@ namespace ADHDPlanner.View.UserControls
         private void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private void Delete_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
         }
     }
 }

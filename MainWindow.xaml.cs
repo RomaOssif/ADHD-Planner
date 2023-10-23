@@ -27,19 +27,15 @@ namespace ADHDPlanner
 
         private void doStuff()
         {
-            tasks.Add(new UserControls.Task() { Title = "Task number 1", Color = "#BFA8BB", EstimatedTime = "1:25:33" });
-            tasks.Add(new UserControls.Task() { Title = "Task number 1 +ask number 1 +ask number 1 +ask number 1 + Task number 1 + Task number 1",
-                Color = "#FFA836", EstimatedTime = "1:25:33" });
-            tasks.Add(new UserControls.Task() { Title = "Task number 1", EstimatedTime = "1:25:33" });
             tasks.Add(new UserControls.Task() { Title = "Task number 1", EstimatedTime = "1:25:33" });
             tasks.Add(new UserControls.Task() { Title = "Task number 1", EstimatedTime = "1:25:33" });
             tasks.Add(new UserControls.Task() { Title = "Task number 1", CurrentStage = Task.Stage.Finished, Color = "#90B494", EstimatedTime = "1:25:33" });
             tasks.Add(new UserControls.Task() { Title = "Task number 1", EstimatedTime = "1:25:33" });
             tasks.Add(new UserControls.Task() { Title = "Task number 1", EstimatedTime = "1:25:33" });
-            tasks.Add(new UserControls.Task() { Title = "Task number 1", EstimatedTime = "1:25:33" });
-            tasks.Add(new UserControls.Task() { Title = "Task number 1", EstimatedTime = "1:25:33" });
-            tasks.Add(new UserControls.Task() { Title = "Task number 1", EstimatedTime = "1:25:33" });
 
+            tasks.Add(new UserControls.Task() { Title = "Task number 1", EstimatedTime = "1:25:33" });
+            tasks.Add(new UserControls.Task() { Title = "Task number 1", EstimatedTime = "1:25:33" });
+            tasks.Add(new UserControls.Task() { Title = "Task number 1", EstimatedTime = "1:25:33" });
             tasks.Add(new UserControls.Task() { Title = "Task number 1",
                 EstimatedTime = "1:25:33", TaskState = Task.State.ImportantNotUrgent, CurrentStage = Task.Stage.Defined });
         }
@@ -48,8 +44,19 @@ namespace ADHDPlanner
         {
             if (taskView.SelectedItem != null)
             {
+                workspace.SaveTask();
                 workspace.CurrentTask = (Task)taskView.SelectedItem;
             }
+        }
+
+        private void workspace_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("WEEE");
+        }
+
+        private void workspace_Click_1(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

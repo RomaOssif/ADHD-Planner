@@ -20,10 +20,12 @@
                 <ColumnDefinition Width="200"/>
             </Grid.ColumnDefinitions>
 
-            <Button Content="X" FontSize="40" FontWeight="DemiBold" Background="IndianRed" Opacity="0.9" FontFamily="Coilare"/>
+            <Button Content="X" FontSize="40" FontWeight="DemiBold" Background="IndianRed" Opacity="0.9" FontFamily="Coilare"
+                    Click="Delete_Click"/>
 
             <Border Grid.Column="1" BorderBrush="Gray" BorderThickness="1.5">
-                    <TextBox FontSize="26" Margin="2" HorizontalAlignment="Center" MinWidth="300" Text="Name..."
+                    <TextBox FontSize="26" Margin="2" HorizontalAlignment="Center" MinWidth="300" 
+                             Text="{Binding Title}"
                        TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Hidden" FontFamily="Coilare" Name="Title"
                        FontWeight="DemiBold" Opacity="0.9" Background="Transparent" BorderThickness="0"/>
             </Border>
@@ -38,9 +40,9 @@
                 <ColumnDefinition Width="40*"/>
             </Grid.ColumnDefinitions>
 
-            <TextBox Text="Text here :)"  Margin="5, 2, 0, 0" Name="descriptionTBox"
+            <TextBox Text="{Binding Description}"  Margin="5, 2, 0, 0" Name="descriptionTBox" AcceptsReturn="True" AcceptsTab="True"
                      FontWeight="Regular" FontFamily="Coilare" TextWrapping="Wrap" FontSize="20"/>
-            <TextBox Grid.Column="1" Text="Second space for typing. . ." TextWrapping="Wrap"
+            <TextBox Grid.Column="1" Text="{Binding OrderedDescription}" TextWrapping="Wrap" AcceptsReturn="True" AcceptsTab="True"
                      FontSize="20" Name="listTBox" FontWeight="Regular" FontFamily="Coilare" Margin="5, 2, 0, 0"/>
         </Grid>
 
@@ -52,7 +54,7 @@
             </Grid.ColumnDefinitions>
 
             <Border BorderBrush="Gray" BorderThickness="1.5" Opacity="0.85">
-                <TextBox Text="hh:mm:ss" Background="Transparent" FontSize="20" FontWeight="Regular" Name="timeTB"
+                <TextBox Text="{Binding EstimatedTime}" Background="Transparent" FontSize="20" FontWeight="Regular" Name="timeTB"
                            FontFamily="Coilare" Margin="5, 2, 0, 0" BorderThickness="0"/>
             </Border>
 
