@@ -32,6 +32,18 @@
                     Opacity="0.95" Content="Define"/>
         </Grid>
 
+        <Grid Grid.Row="1" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60*"/>
+                <ColumnDefinition Width="40*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBox Text="Get some food from the fridge and make a tost" TextWrapping="Wrap" FontSize="20" Name="descriptionTBox"
+                     FontWeight="Regular" FontFamily="Coilare" Margin="5, 2, 0, 0"/>
+            <TextBox Grid.Column="1" Text="Get some food from the fridge and make a tost" TextWrapping="Wrap" FontSize="20" Name="listTBox"
+                     FontWeight="Regular" FontFamily="Coilare" Margin="5, 2, 0, 0"/>
+        </Grid>
+
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="100"/>
