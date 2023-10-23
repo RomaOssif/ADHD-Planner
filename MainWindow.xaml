@@ -10,13 +10,7 @@
         WindowState="Maximized">
     <Window.Resources>
         <Style TargetType="ListViewItem" >
-            <Setter Property="Background" Value="{Binding Color}" />
             <Setter Property="MinWidth" Value="350"/>
-        </Style>
-
-        <Style TargetType="userControls:Task">
-            <Setter Property="MinHeight" Value="110"/>
-            <Setter Property="Width" Value="340" />
         </Style>
     </Window.Resources>
     
@@ -27,15 +21,16 @@
         </Grid.RowDefinitions>
         
         <TabControl>
-            <TabItem Header="All" FontSize="20">
+            <TabItem Header="All" FontSize="20" FontFamily="Courier">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="350"/>
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
 
-                    <ListView Background="AliceBlue" ItemsSource="{Binding Tasks}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-                        <!--<userControls:Task Title="asdas" EstimatedTime="12:12:12" Color="blue"/>-->
+                    <ListView Background="AliceBlue" ItemsSource="{Binding Tasks}"
+                              ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                              ScrollViewer.VerticalScrollBarVisibility="Hidden">
                     </ListView>
 
                 </Grid>
@@ -47,8 +42,6 @@
             <TabItem Header="Pomodoro" FontSize="20"></TabItem>
         </TabControl>
 
-        <TextBlock Grid.Row="1" Text="7 / 11" HorizontalAlignment="Right" FontSize="15" Margin="0, 0, 10, 0"
-                   TextWrapping="Wrap"/>
-
+        <TextBlock Grid.Row="1" Text="7 / 11" HorizontalAlignment="Right" FontSize="15" Margin="0, 0, 10, 0"/>
     </Grid>
 </Window>

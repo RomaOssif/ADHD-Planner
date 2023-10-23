@@ -30,6 +30,14 @@ namespace ADHDPlanner
                 Color = "#FFA836", EstimatedTime = "1:25:33" });
             tasks.Add(new UserControls.Task() { Title = "Task number 1", Color = "#90B494", EstimatedTime = "1:25:33" });
             tasks.Add(new UserControls.Task() { Title = "Task number 1", Color = "#90B494", EstimatedTime = "1:25:33" });
+            tasks.Add(new UserControls.Task() { Title = "Task number 1", Color = "#90B494", EstimatedTime = "1:25:33" });
+            tasks.Add(new UserControls.Task() { Title = "Task number 1", Color = "#90B494", EstimatedTime = "1:25:33" });
+            tasks.Add(new UserControls.Task() { Title = "Task number 1", Color = "#90B494", EstimatedTime = "1:25:33" });
+            tasks.Add(new UserControls.Task() { Title = "Task number 1", Color = "#90B494", EstimatedTime = "1:25:33" });
+            tasks.Add(new UserControls.Task() { Title = "Task number 1", Color = "#90B494", EstimatedTime = "1:25:33" });
+            tasks.Add(new UserControls.Task() { Title = "Task number 1", Color = "#90B494", EstimatedTime = "1:25:33" });
+            tasks.Add(new UserControls.Task() { Title = "Task number 1", Color = "#90B494", EstimatedTime = "1:25:33" });
+            tasks.Add(new UserControls.Task() { Title = "Task number 1", Color = "#90B494", EstimatedTime = "1:25:33" });
         }
     }
 }

@@ -4,13 +4,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ADHDPlanner.View.UserControls"
-             mc:Ignorable="d"
+             mc:Ignorable="d" MinHeight="110" Width="340"
              d:DesignHeight="200" d:DesignWidth="400">
     <Grid Background="{Binding Color}">
-        <TextBlock TextAlignment="Left" VerticalAlignment="Top" Margin="0, 8, 0, 0" FontSize="25" FontFamily="Courier"
-                   Text="{Binding Title}" Width="300" TextWrapping="Wrap" Padding="0, 0, 0, 40"/>
+        <TextBlock TextAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5, 8, 0, 0"
+                   FontSize="25" FontFamily="Courier"
+                   Text="{Binding Title}" Width="275" TextWrapping="Wrap" Padding="0, 0, 0, 40" FontWeight="Medium"/>
 
-        <TextBlock Text="{Binding EstimatedTime}" TextAlignment="Right" VerticalAlignment="Bottom"
+        <TextBlock Text="{Binding EstimatedTime}" TextAlignment="Right" VerticalAlignment="Bottom" FontSize="20" FontWeight="Light"
                    Margin="0, 5, 5, 5"/>
     </Grid>
 </UserControl>
