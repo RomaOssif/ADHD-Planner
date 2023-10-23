@@ -38,10 +38,10 @@
                 <ColumnDefinition Width="40*"/>
             </Grid.ColumnDefinitions>
 
-            <TextBox Text="Get some food from the fridge and make a tost" TextWrapping="Wrap" FontSize="20" Name="descriptionTBox"
-                     FontWeight="Regular" FontFamily="Coilare" Margin="5, 2, 0, 0"/>
-            <TextBox Grid.Column="1" Text="Get some food from the fridge and make a tost" TextWrapping="Wrap" FontSize="20" Name="listTBox"
-                     FontWeight="Regular" FontFamily="Coilare" Margin="5, 2, 0, 0"/>
+            <TextBox Text="Get some food from the fridge and make a tost" Margin="5, 2, 0, 0" Name="descriptionTBox"
+                     FontWeight="Regular" FontFamily="Coilare" TextWrapping="Wrap" FontSize="20"/>
+            <TextBox Grid.Column="1" Text="Get some food from the fridge and make a tost" TextWrapping="Wrap"
+                     FontSize="20" Name="listTBox" FontWeight="Regular" FontFamily="Coilare" Margin="5, 2, 5, 0"/>
         </Grid>
 
         <Grid Grid.Row="2">
