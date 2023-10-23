@@ -21,24 +21,14 @@ namespace ADHDPlanner
         {
             DataContext = this;
 
-            doStuff();
+            Setup();
 
             InitializeComponent();
         }
 
-        private void doStuff()
+        private void Setup()
         {
-            tasks.Add(new UserControls.Task() { Title = "Task number 1", EstimatedTime = "1:25:33" });
-            tasks.Add(new UserControls.Task() { Title = "Task number 1", EstimatedTime = "1:25:33" });
-            tasks.Add(new UserControls.Task() { Title = "Task number 1", CurrentStage = Task.Stage.Finished, Color = "#90B494", EstimatedTime = "1:25:33" });
-            tasks.Add(new UserControls.Task() { Title = "Task number 1", EstimatedTime = "1:25:33" });
-            tasks.Add(new UserControls.Task() { Title = "Task number 1", EstimatedTime = "1:25:33" });
-
-            tasks.Add(new UserControls.Task() { Title = "Task number 1", EstimatedTime = "1:25:33" });
-            tasks.Add(new UserControls.Task() { Title = "Task number 1", EstimatedTime = "1:25:33" });
-            tasks.Add(new UserControls.Task() { Title = "Task number 1", EstimatedTime = "1:25:33" });
-            tasks.Add(new UserControls.Task() { Title = "Task number 1",
-                EstimatedTime = "1:25:33", TaskState = Task.State.ImportantNotUrgent, CurrentStage = Task.Stage.Defined });
+            tasks.Add(new UserControls.Task() { Title = "Task #1", EstimatedTime = "hh:mm:ss" });
         }
 
         private void taskView_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)

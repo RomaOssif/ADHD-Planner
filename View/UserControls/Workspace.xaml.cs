@@ -96,24 +96,27 @@ namespace ADHDPlanner.View.UserControls
 
         private void btnUpdate_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            if (CurrentTask.CurrentStage == Task.Stage.Undefined)
+            if (currentTask != null)
             {
-                btnUpdate.Content = "Define";
-                CurrentTask.CurrentStage++;
-            }
-            else if (CurrentTask.CurrentStage == Task.Stage.Defined)
-            {
-                btnUpdate.Content = "Finish";
-                CurrentTask.CurrentStage++;
-            }
-            else
-            {
-                btnUpdate.Content = "Finish";
-                currentTask.CurrentStage--;
-            }
+                if (CurrentTask.CurrentStage == Task.Stage.Undefined)
+                {
+                    btnUpdate.Content = "Define";
+                    CurrentTask.CurrentStage++;
+                }
+                else if (CurrentTask.CurrentStage == Task.Stage.Defined)
+                {
+                    btnUpdate.Content = "Finish";
+                    CurrentTask.CurrentStage++;
+                }
+                else
+                {
+                    btnUpdate.Content = "Finish";
+                    currentTask.CurrentStage--;
+                }
 
-            Set(CurrentTask.CurrentStage);
-            SaveTask();
+                Set(CurrentTask.CurrentStage);
+                SaveTask();
+            }
         }
 
         public event RoutedEventHandler Click
