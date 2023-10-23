@@ -23,15 +23,13 @@
             <Button Content="X" FontSize="40" FontWeight="DemiBold" Background="IndianRed" Opacity="0.9" FontFamily="Coilare"/>
 
             <Border Grid.Column="1" BorderBrush="Gray" BorderThickness="1.5">
-                <ScrollViewer VerticalScrollBarVisibility="Hidden">
-                <TextBlock Text="Fead a cat and do some work" FontSize="33" Margin="5" HorizontalAlignment="Center"
-                       TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Hidden" FontFamily="Coilare"
-                       FontWeight="DemiBold" Opacity="0.9" />
-                </ScrollViewer>
+                    <TextBox FontSize="26" Margin="2" HorizontalAlignment="Center" MinWidth="300" Text="Name..."
+                       TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Hidden" FontFamily="Coilare" Name="Title"
+                       FontWeight="DemiBold" Opacity="0.9" Background="Transparent" BorderThickness="0"/>
             </Border>
             
             <Button Grid.Column="2" FontSize="35" FontWeight="DemiBold" Background="LightGreen" FontFamily="Coilare"
-                    Opacity="0.95" Content="Define"/>
+                    Opacity="0.95" Content="Define" Name="btnUpdate"/>
         </Grid>
 
         <Grid Grid.Row="1" >
@@ -40,9 +38,9 @@
                 <ColumnDefinition Width="40*"/>
             </Grid.ColumnDefinitions>
 
-            <TextBox Text="Get some food from the fridge and make a tost" Margin="5, 2, 0, 0" Name="descriptionTBox"
+            <TextBox Text="Text here :)"  Margin="5, 2, 0, 0" Name="descriptionTBox"
                      FontWeight="Regular" FontFamily="Coilare" TextWrapping="Wrap" FontSize="20"/>
-            <TextBox Grid.Column="1" Text="Get some food from the fridge and make a tost" TextWrapping="Wrap"
+            <TextBox Grid.Column="1" Text="Second space for typing. . ." TextWrapping="Wrap"
                      FontSize="20" Name="listTBox" FontWeight="Regular" FontFamily="Coilare" Margin="5, 2, 0, 0"/>
         </Grid>
 
@@ -54,17 +52,25 @@
             </Grid.ColumnDefinitions>
 
             <Border BorderBrush="Gray" BorderThickness="1.5" Opacity="0.85">
-                <TextBox Text="00:25:00" Background="Transparent" FontSize="20" FontWeight="Regular" Name="timeTB"
+                <TextBox Text="hh:mm:ss" Background="Transparent" FontSize="20" FontWeight="Regular" Name="timeTB"
                            FontFamily="Coilare" Margin="5, 2, 0, 0" BorderThickness="0"/>
             </Border>
 
             <Border Grid.Column="1" BorderBrush="Gray" BorderThickness="1.5">
-                <TextBlock Text="Important urgent" FontSize="20" FontWeight="DemiBold" Name="stateTB"
-                           FontFamily="Coilare" Margin="5, 2, 0, 0" TextAlignment="Center"/>
+                <!--<TextBlock Text="Important urgent" FontSize="20" FontWeight="DemiBold" Name="stateTB"
+                           FontFamily="Coilare" Margin="5, 2, 0, 0" TextAlignment="Center"/>-->
+                <ComboBox Grid.Column="1" Text="Important urgent" FontSize="20" FontWeight="DemiBold" Name="stateCB"
+                          FontFamily="Coilare" Margin="0, 0, 1, 0" Background="Transparent"
+                          HorizontalContentAlignment="Center" BorderThickness="0">
+                    <ComboBoxItem Content="Important urgent" />
+                    <ComboBoxItem Content="Important not urgent" />
+                    <ComboBoxItem Content="Not important urgent" />
+                    <ComboBoxItem Content="Not important not urgent" IsSelected="True"/>
+                </ComboBox>
             </Border>
 
             <Border Grid.Column="2" BorderBrush="Gray" BorderThickness="1.5">
-                <ComboBox FontSize="18" FontWeight="SemiBold" FontFamily="Coilare" >
+                <ComboBox FontSize="18" FontWeight="SemiBold" FontFamily="Coilare" Name="stageCB" >
                     <ComboBoxItem Content="Undefined" IsSelected="True"/>
                     <ComboBoxItem Content="Defined"/>
                     <ComboBoxItem Content="Finished"/>

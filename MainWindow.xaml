@@ -30,10 +30,10 @@
 
                     <ListView Background="AliceBlue" ItemsSource="{Binding Tasks}" Name="taskView"
                               ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                              ScrollViewer.VerticalScrollBarVisibility="Hidden">
+                              ScrollViewer.VerticalScrollBarVisibility="Hidden" SelectionChanged="taskView_SelectionChanged">
                     </ListView>
 
-                    <userControls:Workspace Grid.Column="1" />
+                    <userControls:Workspace Grid.Column="1" x:Name="workspace"/>
 
                 </Grid>
             </TabItem>

@@ -8,12 +8,79 @@ namespace ADHDPlanner.View.UserControls
 {
     public partial class Task : UserControl, INotifyPropertyChanged
     {
+        public enum Stage
+        {
+            Undefined = 0,
+            Defined = 1,
+            Finished = 2
+        }
+
+        public enum State
+        {
+            ImportantUrgent = 4,
+            ImportantNotUrgent = 3,
+            NotImportantUrgent = 2,
+            NotImportantNotUrgent = 0
+        }
+
+        private State taskState;
+
+        public State TaskState
+        {
+            get { return taskState; }
+            set
+            {
+                taskState = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private Stage currentStage;
+
+        public Stage CurrentStage
+        {
+            get { return currentStage; }
+            set 
+            { 
+                currentStage = value;
+
+                if (currentStage == Stage.Undefined)
+                {
+                    Color = "#90B494"; //"#"
+                }
+                else if (currentStage == Stage.Defined)
+                {
+                    Color = "#4E7145"; //"#DFBB34"
+                }
+                else if (currentStage == Stage.Finished)
+                {
+                    Color = "#bf212f"; //4E7145
+                }
+
+                OnPropertyChanged();
+            }
+        }
+
         public Task()
         {
             DataContext = this;
 
+            color = "#90B494";
+            currentStage = Stage.Undefined;
+
             InitializeComponent();
         }
+
+        public Task(Stage stage)
+        {
+            DataContext = this;
+
+            currentStage = stage;
+
+            InitializeComponent();
+        }
+
+
         public event PropertyChangedEventHandler? PropertyChanged;
 
         private string title;
@@ -65,10 +132,24 @@ namespace ADHDPlanner.View.UserControls
         public string Description
         {
             get { return description; }
-            set { description = value; }
+            set 
+            {
+                description = value; 
+                OnPropertyChanged();
+            }
         }
 
-        //ordered description?
+        private string orderedDescription;
+
+        public string OrderedDescription
+        {
+            get { return orderedDescription; }
+            set 
+            { 
+                orderedDescription = value; 
+                OnPropertyChanged();
+            }
+        }
 
         private void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
