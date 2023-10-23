@@ -33,6 +33,8 @@
                               ScrollViewer.VerticalScrollBarVisibility="Hidden">
                     </ListView>
 
+                    <userControls:Workspace Grid.Column="1" />
+
                 </Grid>
             </TabItem>
             
