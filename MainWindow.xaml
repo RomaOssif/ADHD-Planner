@@ -28,7 +28,7 @@
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
 
-                    <ListView Background="AliceBlue" ItemsSource="{Binding Tasks}"
+                    <ListView Background="AliceBlue" ItemsSource="{Binding Tasks}" Name="taskView"
                               ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                               ScrollViewer.VerticalScrollBarVisibility="Hidden">
                     </ListView>
