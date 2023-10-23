@@ -13,15 +13,15 @@
             <Setter Property="MinWidth" Value="350"/>
         </Style>
     </Window.Resources>
-    
-    <Grid>
+
+    <Grid Background="#DFFFB3">
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition Height="25"/>
         </Grid.RowDefinitions>
         
         <TabControl>
-            <TabItem Header="All" FontSize="20" FontFamily="Courier">
+            <TabItem Header="All" FontSize="20" FontFamily="Courier" Name="AllTab">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="350"/>
@@ -37,14 +37,21 @@
 
                 </Grid>
             </TabItem>
+
+            <TabItem Header="Add task" FontSize="20" ButtonBase.Click="TabItem_Click">
+                <Button Content="Add a new task!" FontFamily="Coilare" FontSize="40" Margin="2" Background="#D3FB99"/>
+            </TabItem>
             
-            <TabItem Header="Add task" FontSize="20"/>
-            <TabItem Header="Eisenhower matrix" FontSize="20"></TabItem>
+            <TabItem Header="Eisenhower matrix" FontSize="20">
+                <Label Content=":("/>
+            </TabItem>
             
-            <TabItem Header="Pomodoro" FontSize="20"></TabItem>
+            <TabItem Header="Pomodoro" FontSize="20">
+                <Label Content="):"/>
+            </TabItem>
         </TabControl>
 
-        <TextBlock Grid.Row="1" FontFamily="Courier" HorizontalAlignment="Right" Text="7 / 11"
+        <TextBlock Grid.Row="1" FontFamily="Courier" HorizontalAlignment="Right"
                    FontSize="15" Margin="0, 2, 10, 0" Name="progressBar"/>
     </Grid>
 </Window>

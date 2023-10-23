@@ -71,5 +71,15 @@ namespace ADHDPlanner
             progressBar.Text += " / ";
             progressBar.Text += Tasks.Count;
         }
+
+        private void TabItem_Click(object sender, RoutedEventArgs e)
+        {
+            Tasks.Add(new Task() { Title = "New task" });
+
+            AllTab.Focus();
+            taskView.SelectedIndex = Tasks.Count - 1;
+
+            workspace.Title.Focus();
+        }
     }
 }
