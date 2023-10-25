@@ -12,6 +12,11 @@
         <Style TargetType="ListViewItem" >
             <Setter Property="MinWidth" Value="350"/>
         </Style>
+
+        <Style TargetType="TabItem">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontFamily" Value="Courier"/>
+        </Style>
     </Window.Resources>
 
     <Window.CommandBindings>
@@ -26,7 +31,7 @@
         </Grid.RowDefinitions>
         
         <TabControl>
-            <TabItem Header="All" FontSize="20" FontFamily="Courier" Name="AllTab">
+            <TabItem Header="All" Name="AllTab">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="350"/>
@@ -39,19 +44,18 @@
                     </ListView>
 
                     <userControls:Workspace Grid.Column="1" x:Name="workspace" ButtonBase.Click="workspace_Click"/>
-
                 </Grid>
             </TabItem>
 
-            <TabItem Header="Add task" FontSize="20" ButtonBase.Click="AddTab_Click">
+            <TabItem Header="Add task" ButtonBase.Click="AddTab_Click">
                 <Button Content="Add a new task!" FontFamily="Coilare" FontSize="40" Margin="2" Background="#D3FB99"/>
             </TabItem>
             
-            <TabItem Header="Eisenhower matrix" FontSize="20">
+            <TabItem Header="Eisenhower matrix">
                 <Label Content=":("/>
             </TabItem>
             
-            <TabItem Header="Pomodoro" FontSize="20">
+            <TabItem Header="Pomodoro">
                 <Label Content="):"/>
             </TabItem>
         </TabControl>
