@@ -2,7 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
-using System.Windows.Controls;
+using System.Windows.Input;
 using UserControls = ADHDPlanner.View.UserControls;
 
 namespace ADHDPlanner
@@ -29,6 +29,8 @@ namespace ADHDPlanner
         private void Setup()
         {
             tasks.Add(new UserControls.Task() { Title = "Task #1", EstimatedTime = "hh:mm:ss" });
+
+            commandTest.InputGestures.Add(new KeyGesture(Key.W, ModifierKeys.Control));
         }
 
         private void taskView_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
@@ -66,10 +68,25 @@ namespace ADHDPlanner
         {
             Tasks.Add(new Task() { Title = "New task" });
 
+            UpdateProgressBar();
+
             AllTab.Focus();
             taskView.SelectedIndex = Tasks.Count - 1;
 
             workspace.Title.Focus();
         }
+
+        private void DeleteTabCtrlW(object sender, RoutedEventArgs e)
+        {
+            if (taskView.SelectedItem != null)
+            {
+                Tasks.RemoveAt(taskView.SelectedIndex);
+                
+                workspace.Set();
+                UpdateProgressBar();
+            }
+        }
+
+        public static RoutedCommand commandTest = new RoutedCommand();
     }
 }

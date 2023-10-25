@@ -14,6 +14,11 @@
         </Style>
     </Window.Resources>
 
+    <Window.CommandBindings>
+        <CommandBinding Command="{x:Static local:MainWindow.commandTest}"
+                        Executed="DeleteTabCtrlW" />
+    </Window.CommandBindings>
+
     <Grid Background="#DFFFB3">
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -51,7 +56,7 @@
             </TabItem>
         </TabControl>
 
-        <TextBlock Grid.Row="1" FontFamily="Courier" HorizontalAlignment="Right"
+        <TextBlock Grid.Row="1" FontFamily="Courier" HorizontalAlignment="Right" Text="0 / 1"
                    FontSize="15" Margin="0, 2, 10, 0" Name="progressBar"/>
     </Grid>
 </Window>
