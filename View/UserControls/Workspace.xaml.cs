@@ -3,7 +3,6 @@ using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
-using static ADHDPlanner.View.UserControls.Task;
 
 namespace ADHDPlanner.View.UserControls
 {
@@ -55,6 +54,8 @@ namespace ADHDPlanner.View.UserControls
 
         public void Set()
         {
+            currentTask = null;
+
             Title.Clear();
 
             descriptionTBox.Clear();

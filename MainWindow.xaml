@@ -15,7 +15,7 @@
     </Window.Resources>
 
     <Window.CommandBindings>
-        <CommandBinding Command="{x:Static local:MainWindow.commandTest}"
+        <CommandBinding Command="{x:Static local:MainWindow.shortcutCommand}"
                         Executed="DeleteTabCtrlW" />
     </Window.CommandBindings>
 
@@ -43,7 +43,7 @@
                 </Grid>
             </TabItem>
 
-            <TabItem Header="Add task" FontSize="20" ButtonBase.Click="TabItem_Click">
+            <TabItem Header="Add task" FontSize="20" ButtonBase.Click="AddTab_Click">
                 <Button Content="Add a new task!" FontFamily="Coilare" FontSize="40" Margin="2" Background="#D3FB99"/>
             </TabItem>
             

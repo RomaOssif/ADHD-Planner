@@ -30,7 +30,7 @@ namespace ADHDPlanner
         {
             tasks.Add(new UserControls.Task() { Title = "Task #1", EstimatedTime = "hh:mm:ss" });
 
-            commandTest.InputGestures.Add(new KeyGesture(Key.W, ModifierKeys.Control));
+            shortcutCommand.InputGestures.Add(new KeyGesture(Key.W, ModifierKeys.Control));
         }
 
         private void taskView_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
@@ -57,14 +57,10 @@ namespace ADHDPlanner
 
         private void UpdateProgressBar()
         {
-            progressBar.Text = "";
-
-            progressBar.Text += Tasks.Where(e => e.CurrentStage == Task.Stage.Finished).Count();
-            progressBar.Text += " / ";
-            progressBar.Text += Tasks.Count;
+            progressBar.Text = $"{Tasks.Where(e => e.CurrentStage == Task.Stage.Finished).Count()} / {Tasks.Count}";
         }
 
-        private void TabItem_Click(object sender, RoutedEventArgs e)
+        private void AddTab_Click(object sender, RoutedEventArgs e)
         {
             Tasks.Add(new Task() { Title = "New task" });
 
@@ -87,6 +83,6 @@ namespace ADHDPlanner
             }
         }
 
-        public static RoutedCommand commandTest = new RoutedCommand();
+        public static RoutedCommand shortcutCommand = new RoutedCommand();
     }
 }
