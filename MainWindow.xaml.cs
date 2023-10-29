@@ -30,8 +30,6 @@ namespace ADHDPlanner
         {
             tasks.Add(new UserControls.Task() { Title = "Task #1", EstimatedTime = "hh:mm:ss" });
 
-            //To think later how to add 2+ modifiers, or i.e. more than 2 keys: e.g. CTRL + SHIFT + TAB --> Use logical or |
-
             deleteTask.InputGestures.Add(new KeyGesture(Key.W, ModifierKeys.Control)); //CTRL + W = DELETE
             saveTask  .InputGestures.Add(new KeyGesture(Key.S, ModifierKeys.Control | ModifierKeys.Shift)); //CTRL + S = SAVE
             createTask.InputGestures.Add(new KeyGesture(Key.T, ModifierKeys.Control)); //CTRL + T = CREATE
