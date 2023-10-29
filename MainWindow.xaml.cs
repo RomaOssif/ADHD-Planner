@@ -30,7 +30,11 @@ namespace ADHDPlanner
         {
             tasks.Add(new UserControls.Task() { Title = "Task #1", EstimatedTime = "hh:mm:ss" });
 
-            shortcutCommand.InputGestures.Add(new KeyGesture(Key.W, ModifierKeys.Control));
+            //To think later how to add 2+ modifiers, or i.e. more than 2 keys: e.g. CTRL + SHIFT + TAB --> Use logical or |
+
+            deleteTask.InputGestures.Add(new KeyGesture(Key.W, ModifierKeys.Control)); //CTRL + W = DELETE
+            saveTask  .InputGestures.Add(new KeyGesture(Key.S, ModifierKeys.Control | ModifierKeys.Shift)); //CTRL + S = SAVE
+            createTask.InputGestures.Add(new KeyGesture(Key.T, ModifierKeys.Control)); //CTRL + T = CREATE
         }
 
         private void taskView_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
@@ -83,6 +87,21 @@ namespace ADHDPlanner
             }
         }
 
-        public static RoutedCommand shortcutCommand = new RoutedCommand();
+        private void CreateTaskCtrlT(object sender, RoutedEventArgs e)
+        {
+            AddTab_Click(sender, e);
+        }
+
+        private void SaveTaskCtrlS(object sender, RoutedEventArgs e)
+        {
+            if (taskView.SelectedItem != null)
+            {
+                workspace.SaveTask();
+            }
+        }
+
+        public static RoutedCommand deleteTask = new RoutedCommand();
+        public static RoutedCommand saveTask = new RoutedCommand();
+        public static RoutedCommand createTask = new RoutedCommand();
     }
 }

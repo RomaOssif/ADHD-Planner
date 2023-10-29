@@ -20,8 +20,9 @@
     </Window.Resources>
 
     <Window.CommandBindings>
-        <CommandBinding Command="{x:Static local:MainWindow.shortcutCommand}"
-                        Executed="DeleteTabCtrlW" />
+        <CommandBinding Command="{x:Static local:MainWindow.deleteTask}" Executed="DeleteTabCtrlW" />
+        <CommandBinding Command="{x:Static local:MainWindow.createTask}" Executed="CreateTaskCtrlT"/>
+        <CommandBinding Command="{x:Static local:MainWindow.saveTask}"   Executed="SaveTaskCtrlS"  />
     </Window.CommandBindings>
 
     <Grid Background="#DFFFB3">
