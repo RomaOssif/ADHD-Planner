@@ -50,11 +50,6 @@ namespace ADHDPlanner
                 DeleteTask();
         }
 
-        private void AddTab_Click(object sender, RoutedEventArgs e)
-        {
-            AddTask();
-        }
-
         private void UpdateProgressBar()
         {
             progressBar.Text = $"{Tasks.Where(e => e.CurrentStage == Task.Stage.Finished).Count()} / {Tasks.Count}";
@@ -114,5 +109,10 @@ namespace ADHDPlanner
         public static RoutedCommand deleteTask = new RoutedCommand();
         public static RoutedCommand saveTask = new RoutedCommand();
         public static RoutedCommand createTask = new RoutedCommand();
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            AddTask();
+        }
     }
 }

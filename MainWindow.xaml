@@ -30,7 +30,10 @@
             <RowDefinition/>
             <RowDefinition Height="25"/>
         </Grid.RowDefinitions>
-        
+
+        <Button Content="Add task!" Click="Button_Click" FontFamily="Coilare" VerticalAlignment="Top" HorizontalAlignment="Left"
+                FontSize="20" Margin="0, 0, 4, 0" Background="LightGreen" Opacity="0.8" FontWeight="SemiBold" Grid.Row="1"/>
+
         <TabControl>
             <TabItem Header="All" Name="AllTab">
                 <Grid>
@@ -48,10 +51,6 @@
                 </Grid>
             </TabItem>
 
-            <TabItem Header="Add task" ButtonBase.Click="AddTab_Click" >
-                <Button Content="Add a new task!" FontFamily="Coilare" FontSize="40" Margin="2" Background="#D3FB99"/>
-            </TabItem>
-            
             <TabItem Header="Eisenhower matrix">
                 <Label Content=":("/>
             </TabItem>
