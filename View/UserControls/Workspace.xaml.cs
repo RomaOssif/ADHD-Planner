@@ -97,6 +97,11 @@ namespace ADHDPlanner.View.UserControls
 
         private void btnUpdate_Click(object sender, System.Windows.RoutedEventArgs e)
         {
+            UpdateTask();
+        }
+
+        public void UpdateTask()
+        {
             if (currentTask != null)
             {
                 if (CurrentTask.CurrentStage == Task.Stage.Undefined)

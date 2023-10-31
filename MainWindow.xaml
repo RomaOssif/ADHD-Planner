@@ -40,7 +40,7 @@
                     </Grid.ColumnDefinitions>
 
                     <ListView Background="AliceBlue" ItemsSource="{Binding Tasks}" Name="taskView" 
-                              ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                              ScrollViewer.HorizontalScrollBarVisibility="Disabled" MouseDoubleClick="taskView_MouseDoubleClick"
                               ScrollViewer.VerticalScrollBarVisibility="Hidden" SelectionChanged="taskView_SelectionChanged">
                     </ListView>
 

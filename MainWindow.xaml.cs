@@ -101,5 +101,15 @@ namespace ADHDPlanner
         public static RoutedCommand deleteTask = new RoutedCommand();
         public static RoutedCommand saveTask = new RoutedCommand();
         public static RoutedCommand createTask = new RoutedCommand();
+
+        private void taskView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (taskView.SelectedItem != null)
+            {
+                workspace.UpdateTask();
+
+                UpdateProgressBar();
+            }
+        }
     }
 }
