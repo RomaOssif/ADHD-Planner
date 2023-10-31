@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:ADHDPlanner"
         xmlns:userControls="clr-namespace:ADHDPlanner.View.UserControls"
         mc:Ignorable="d"
-        Title="ADHD Planner" Height="450" Width="800"
-        WindowState="Maximized">
+        Title="ADHD Planner" Height="600" Width="1200"
+        >
     <Window.Resources>
         <Style TargetType="ListViewItem" >
             <Setter Property="MinWidth" Value="350"/>
