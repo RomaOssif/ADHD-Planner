@@ -48,7 +48,7 @@
                 </Grid>
             </TabItem>
 
-            <TabItem Header="Add task" ButtonBase.Click="AddTab_Click">
+            <TabItem Header="Add task" ButtonBase.Click="AddTab_Click" >
                 <Button Content="Add a new task!" FontFamily="Coilare" FontSize="40" Margin="2" Background="#D3FB99"/>
             </TabItem>
             
@@ -56,12 +56,12 @@
                 <Label Content=":("/>
             </TabItem>
             
-            <TabItem Header="Pomodoro">
+            <!--<TabItem Header="Pomodoro">
                 <Label Content="):"/>
-            </TabItem>
+            </TabItem>-->
         </TabControl>
 
-        <TextBlock Grid.Row="1" FontFamily="Courier" HorizontalAlignment="Right" Text="0 / 1"
-                   FontSize="15" Margin="0, 2, 10, 0" Name="progressBar"/>
+        <TextBlock Grid.Row="1" HorizontalAlignment="Right" Text="0 / 1"
+                   FontSize="15" Margin="0, 0, 10, 0" Name="progressBar"/>
     </Grid>
 </Window>
