@@ -60,7 +60,8 @@
                         <RowDefinition Height="100"/>
                     </Grid.RowDefinitions>
 
-                    <Button Width="150" Height="60" Content="Start" FontSize="35" Background="PaleGreen" />
+                    <Button Width="150" Height="60" Content="Start" FontSize="35" Background="PaleGreen"
+                            Name="btnStartTimer" Click="btnStartTimer_Click"/>
 
                     <Border Grid.Row="1" CornerRadius="50" Background="PaleVioletRed" Height="150" Opacity="0.95"
                             Width="300">
