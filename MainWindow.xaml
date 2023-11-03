@@ -48,13 +48,30 @@
                 </Grid>
             </TabItem>
 
-            <TabItem Header="Eisenhower matrix">
+            <!--<TabItem Header="Eisenhower matrix">
                 <Label Content=":("/>
-            </TabItem>
-            
-            <!--<TabItem Header="Pomodoro">
-                <Label Content="):"/>
             </TabItem>-->
+            
+            <TabItem Header="Pomodoro" Name="tabPomodoro">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="150"/>
+                        <RowDefinition/>
+                        <RowDefinition Height="100"/>
+                    </Grid.RowDefinitions>
+
+                    <Button Width="150" Height="60" Content="Start" FontSize="35" Background="PaleGreen" />
+
+                    <Border Grid.Row="1" CornerRadius="50" Background="PaleVioletRed" Height="150" Opacity="0.95"
+                            Width="300">
+                        <TextBlock Text="{Binding TimerString}" TextAlignment="Center" VerticalAlignment="Center"
+                               FontSize="80" Name="tbTimer"/>
+                    </Border>
+
+                    <TextBlock Grid.Row="2" Name="tbMotivation" Text="You are doing great!" TextAlignment="Center"
+                               VerticalAlignment="Center" FontSize="35" />
+                </Grid>
+            </TabItem>
         </TabControl>
 
         <Grid Grid.Row="1">

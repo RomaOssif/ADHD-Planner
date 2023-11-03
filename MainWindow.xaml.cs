@@ -17,6 +17,14 @@ namespace ADHDPlanner
             set { tasks = value; }
         }
 
+        private string timerString;
+
+        public string TimerString
+        {
+            get { return timerString; }
+            set { timerString = value; }
+        }
+
         public MainWindow()
         {
             DataContext = this;
