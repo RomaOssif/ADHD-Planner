@@ -55,11 +55,20 @@ namespace ADHDPlanner
             timeout -= new TimeSpan(0, 0, 1);
 
             if (timeout > TimeSpan.Zero)
+            {
                 TimerString = timeout.ToString(@"mm\:ss");
+
+                Application.Current.Dispatcher.BeginInvoke(() => Title = "ADHD Planner -- " + TimerString);
+            }
             else
             {
                 TimerString = "Finished";
-                Application.Current.Dispatcher.BeginInvoke(() => btnStartTimer.Content = "Start");
+                Application.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    btnStartTimer.Content = "Start";
+                    
+                    Title = "ADHD Planner -- session finished!";
+                });
 
                 isRunning = null;
 
