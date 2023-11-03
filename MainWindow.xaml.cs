@@ -36,11 +36,12 @@ namespace ADHDPlanner
         private System.Timers.Timer pomodoroTimer;
         private TimeSpan timeout;
         private bool? isRunning;
+        private int sessionFinished = 0;
 
         private void SetTimer(int miliseconds = 1000)
         {
             pomodoroTimer = new System.Timers.Timer(miliseconds);
-            timeout = new TimeSpan(0, 25, 1);
+            timeout = new TimeSpan(0, 0, 5);
 
             pomodoroTimer.AutoReset = true;
             pomodoroTimer.Elapsed += OnTimeElapsed;
@@ -64,6 +65,9 @@ namespace ADHDPlanner
 
                 pomodoroTimer.Stop();
                 pomodoroTimer.Dispose();
+
+                sessionFinished++;
+                Motivate();
             }
         }
 
@@ -194,6 +198,38 @@ namespace ADHDPlanner
                 btnStartTimer.Content = "Stop";
                 isRunning = true;
             }
+        }
+
+        private void Motivate()
+        {
+            string[] sentences =
+            {
+                "Great! You've finished {0} sessions already.",
+                "Well done :D {0} sessions are finished.",
+                "Keep going! You have completed {0} sessions so far!",
+                "I'm proud of you :) You've finished a total of {0} sessions!",
+                "Don't forget to take breaks :) It's been {0} sessions already.",
+                "Nice, {0} finished sessions already! You can do it!"
+            };
+
+            string[] firstSentences =
+            {
+                "Good job! First session has been finished.",
+                "You've already finished your first session, nice!",
+                "You're doing great! Wanna start a second session?",
+                "To start - is the hardest part. Be proud of yourself, you've already did!",
+                "How did your first session go? I know you did pretty well!",
+            };
+
+            var random = new Random();
+
+            Application.Current.Dispatcher.BeginInvoke(() =>
+            {
+                if (sessionFinished == 1)
+                    tbMotivation.Text = string.Format(firstSentences[random.Next(firstSentences.Length)]);
+                else
+                    tbMotivation.Text = string.Format(sentences[random.Next(sentences.Length)], sessionFinished);
+            });
         }
     }
 }
