@@ -31,9 +31,6 @@
             <RowDefinition Height="25"/>
         </Grid.RowDefinitions>
 
-        <Button Content="Add task!" Click="Button_Click" FontFamily="Coilare" VerticalAlignment="Top" HorizontalAlignment="Left"
-                FontSize="20" Margin="0, 0, 4, 0" Background="LightGreen" Opacity="0.8" FontWeight="SemiBold" Grid.Row="1"/>
-
         <TabControl>
             <TabItem Header="All" Name="AllTab">
                 <Grid>
@@ -60,7 +57,12 @@
             </TabItem>-->
         </TabControl>
 
-        <TextBlock Grid.Row="1" HorizontalAlignment="Right" Text="0 / 1"
+        <Grid Grid.Row="1">
+            <Button Content="Add task!" Click="Button_Click" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Coilare"
+                FontSize="20" Margin="0, 0, 4, 0" Background="LightGreen" Opacity="0.8" FontWeight="SemiBold"/>
+
+            <TextBlock HorizontalAlignment="Right" Text="0 / 1"
                    FontSize="15" Margin="0, 0, 10, 0" Name="progressBar"/>
+        </Grid>
     </Grid>
 </Window>
