@@ -16,7 +16,7 @@ namespace ADHDPlanner.View.UserControls
         {
             get { return currentTask; }
             set 
-            { 
+            {
                 currentTask = value;
                 Set(currentTask.CurrentStage);
 
@@ -38,8 +38,7 @@ namespace ADHDPlanner.View.UserControls
             descriptionTBox.Text = CurrentTask.Description;
             listTBox.Text = CurrentTask.OrderedDescription;
 
-            if (currentTask.EstimatedTime != "hh:mm:ss")
-                timeTB.Text = CurrentTask.EstimatedTime;
+            timeTB.Text = CurrentTask.EstimatedTime;
 
             stageCB.SelectedIndex = (int)currentTask.CurrentStage;
             stateCB.SelectedIndex = (int)currentTask.TaskState;

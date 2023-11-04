@@ -32,7 +32,7 @@
         </Grid.RowDefinitions>
 
         <TabControl>
-            <TabItem Header="All" Name="AllTab">
+            <TabItem Header="Tasks" Name="AllTab" Width="200">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="350"/>
@@ -44,11 +44,12 @@
                               ScrollViewer.VerticalScrollBarVisibility="Hidden" SelectionChanged="taskView_SelectionChanged">
                     </ListView>
 
-                    <userControls:Workspace Grid.Column="1" x:Name="workspace" ButtonBase.Click="workspace_Click"/>
+                    <userControls:Workspace Grid.Column="1" x:Name="workspace" ButtonBase.Click="workspace_Click"
+                                            Visibility="Hidden" IsEnabled="False"/>
                 </Grid>
             </TabItem>
 
-            <TabItem Header="Pomodoro" Name="tabPomodoro">
+            <TabItem Header="Pomodoro" Name="tabPomodoro" Width="200">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="150"/>

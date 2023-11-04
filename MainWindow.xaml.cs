@@ -158,11 +158,19 @@ namespace ADHDPlanner
 
         private void taskView_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            if (taskView.SelectedItem != null)
+            if (taskView.SelectedItem == null)
             {
-                workspace.SaveTask();
-                workspace.CurrentTask = (Task)taskView.SelectedItem;
+                workspace.Visibility = Visibility.Hidden;
+                workspace.IsEnabled = false;
+
+                return;
             }
+
+            workspace.Visibility = Visibility.Visible;
+            workspace.IsEnabled = true;
+
+            workspace.SaveTask();
+            workspace.CurrentTask = (Task)taskView.SelectedItem;
         }
 
         private void workspace_Click(object sender, RoutedEventArgs e)
