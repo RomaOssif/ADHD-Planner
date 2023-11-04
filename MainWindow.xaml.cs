@@ -120,7 +120,7 @@ namespace ADHDPlanner
             string[] sentences =
             {
                 "Great! You've finished {0} sessions already.",
-                "Well done :D {0} sessions are finished.",
+                "Well done :D {0} sessions finished so far.",
                 "Keep going! You have completed {0} sessions so far!",
                 "I'm proud of you :) You've finished a total of {0} sessions!",
                 "Don't forget to take breaks :) It's been {0} sessions already.",
@@ -221,10 +221,7 @@ namespace ADHDPlanner
 
         private void SaveTaskCtrlS(object sender, RoutedEventArgs e)
         {
-            if (taskView.SelectedItem != null)
-            {
-                workspace.SaveTask();
-            }
+            workspace.SaveTask();
         }
 
         public static RoutedCommand deleteTask = new RoutedCommand();
