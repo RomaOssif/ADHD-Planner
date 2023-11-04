@@ -181,7 +181,19 @@ namespace ADHDPlanner
 
         private void UpdateProgressBar()
         {
-            progressBar.Text = $"{Tasks.Where(e => e.CurrentStage == Task.Stage.Finished).Count()} / {Tasks.Count}";
+            int finishedTasks = Tasks.Where(e => e.CurrentStage == Task.Stage.Finished).Count();
+            int totalTasks = Tasks.Count;
+
+            progressBar.Text = $"{finishedTasks} / {totalTasks}";
+
+            try
+            {
+                pb.Value = (double)finishedTasks / totalTasks * 100;
+            }
+            catch
+            {
+                pb.Value = 0;
+            }
         }
 
         private void AddTask()
