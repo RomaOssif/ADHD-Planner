@@ -177,6 +177,8 @@ namespace ADHDPlanner
         {
             if (e.OriginalSource.ToString() == "System.Windows.Controls.Button: X")
                 DeleteTask();
+
+            UpdateProgressBar();
         }
 
         private void UpdateProgressBar()
@@ -242,6 +244,8 @@ namespace ADHDPlanner
         private void SaveTaskCtrlS(object sender, RoutedEventArgs e)
         {
             workspace.SaveTask();
+
+            UpdateProgressBar();
         }
 
         public static RoutedCommand deleteTask = new RoutedCommand();
