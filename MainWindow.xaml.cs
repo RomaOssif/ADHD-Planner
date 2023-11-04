@@ -40,6 +40,8 @@ namespace ADHDPlanner
 
         private void SetTimer(int miliseconds = 1000)
         {
+            borderTimer.Visibility = Visibility.Visible;
+
             pomodoroTimer = new System.Timers.Timer(miliseconds);
             timeout = new TimeSpan(0, 25, 1);
 

@@ -64,7 +64,7 @@
                             Name="btnStartTimer" Click="btnStartTimer_Click"/>
 
                     <Border Grid.Row="1" CornerRadius="50" Background="PaleVioletRed" Height="150" Opacity="0.95"
-                            Width="300">
+                            Width="300" Name="borderTimer" Visibility="Hidden">
                         <TextBlock Text="{Binding TimerString}" TextAlignment="Center" VerticalAlignment="Center"
                                FontSize="80" Name="tbTimer"/>
                     </Border>
