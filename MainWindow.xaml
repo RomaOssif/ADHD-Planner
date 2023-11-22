@@ -53,8 +53,8 @@
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="150"/>
-                        <RowDefinition/>
-                        <RowDefinition Height="100"/>
+                        <RowDefinition MinHeight="200"/>
+                        <RowDefinition Height="150"/>
                     </Grid.RowDefinitions>
 
                     <Button Width="150" Height="60" Content="Start" FontSize="35" Background="PaleGreen"
@@ -66,11 +66,11 @@
                                FontSize="80"/>
                     </Border>
 
-                    <ProgressBar Grid.Row="1" BorderThickness="0" Opacity="0.9" Value="75" Height="25" Margin="40"
-                                 VerticalAlignment="Bottom"/>
+                    <ProgressBar Grid.Row="2" BorderThickness="0" Opacity="0.9" Height="22" Margin="30, 0, 30, 15"
+                                 Visibility="Hidden" VerticalAlignment="Bottom" Name="PomodoroProgressBar" Background="AliceBlue"/>
 
-                    <TextBlock Grid.Row="2" Name="tbMotivation" TextAlignment="Center" TextWrapping="Wrap" Margin="5"
-                               VerticalAlignment="Center" FontSize="35" />
+                    <TextBlock Grid.Row="2" Name="tbMotivation" TextAlignment="Center" TextWrapping="Wrap" Margin="15"
+                               VerticalAlignment="Top" FontSize="35"/>
                 </Grid>
             </TabItem>
 

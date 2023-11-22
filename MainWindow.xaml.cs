@@ -61,7 +61,7 @@ namespace ADHDPlanner
             }
             else
             {
-                TimerString = "Finished!";
+                TimerString = "Finished";
                 Application.Current.Dispatcher.BeginInvoke(() =>
                 {
                     btnStartTimer.Content = "Restart";
@@ -77,6 +77,9 @@ namespace ADHDPlanner
             }
 
             PomodoroTabText = "Pomodoro / " + TimerString;
+
+            Application.Current.Dispatcher.BeginInvoke(() => 
+                PomodoroProgressBar.Value = (double)(1500 - timeout.TotalSeconds) / 15);
         }
 
         private string pomodoroTabText;
@@ -97,25 +100,38 @@ namespace ADHDPlanner
 
         private void btnStartTimer_Click(object sender, RoutedEventArgs e)
         {
-            if (isRunning == null)
-            {
-                SetTimer();
+            PomodoroProgressBar.Visibility = Visibility.Visible;
 
-                btnStartTimer.Content = "Stop";
-            }
-            else if (isRunning == true)
+            switch (isRunning)
             {
-                pomodoroTimer.Stop();
+                case null:
+                {
+                    SetTimer();
 
-                btnStartTimer.Content = "Resume";
-                isRunning = false;
-            }
-            else
-            {
-                pomodoroTimer.Start();
+                    btnStartTimer.Content = "Stop";
+                    
+                        break;
+                }
 
-                btnStartTimer.Content = "Stop";
-                isRunning = true;
+                case true:
+                {
+                    pomodoroTimer.Stop();
+
+                    btnStartTimer.Content = "Resume";
+                    isRunning = false;
+                    
+                        break;
+                }
+
+                case false:
+                {
+                    pomodoroTimer.Start();
+
+                    btnStartTimer.Content = "Stop";
+                    isRunning = true;
+                 
+                        break;
+                }
             }
         }
 
