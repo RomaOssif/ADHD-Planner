@@ -45,7 +45,6 @@ namespace ADHDPlanner
             pomodoroTimer = new System.Timers.Timer(miliseconds);
             timeout = new TimeSpan(0, 25, 1);
 
-            pomodoroTimer.AutoReset = true;
             pomodoroTimer.Elapsed += OnTimeElapsed;
 
             pomodoroTimer.Enabled = true;
@@ -59,17 +58,13 @@ namespace ADHDPlanner
             if (timeout > TimeSpan.Zero)
             {
                 TimerString = timeout.ToString(@"mm\:ss");
-
-                Application.Current.Dispatcher.BeginInvoke(() => Title = "ADHD Planner -- " + TimerString);
             }
             else
             {
-                TimerString = "Finished";
+                TimerString = "Finished!";
                 Application.Current.Dispatcher.BeginInvoke(() =>
                 {
-                    btnStartTimer.Content = "Start";
-                    
-                    Title = "ADHD Planner -- session finished!";
+                    btnStartTimer.Content = "Restart";
                 });
 
                 isRunning = null;
@@ -79,6 +74,24 @@ namespace ADHDPlanner
 
                 sessionFinished++;
                 Motivate();
+            }
+
+            PomodoroTabText = "Pomodoro / " + TimerString;
+        }
+
+        private string pomodoroTabText;
+
+        public string PomodoroTabText 
+        {
+            get
+            {
+                return pomodoroTabText;
+            }
+            set
+            {
+                pomodoroTabText = value;
+
+                OnPropertyChanged();
             }
         }
 
@@ -111,9 +124,9 @@ namespace ADHDPlanner
             string[] firstSentences =
             {
                 "Good job! First session has been finished.",
-                "You've already finished your first session, nice!",
+                "You've just finished your first session!",
                 "You're doing great! Wanna start a second session?",
-                "To start - is the hardest part. Be proud of yourself, you've already did!",
+                "To start is the hardest part. Be proud of yourself, you've already did!",
                 "How did your first session go? I know you did pretty well!",
             };
 
@@ -150,6 +163,8 @@ namespace ADHDPlanner
         private void Setup()
         {
             tasks.Add(new UserControls.Task() { Title = "Task #1", EstimatedTime = "hh:mm:ss" });
+
+            PomodoroTabText = "Pomodoro";
 
             deleteTask.InputGestures.Add(new KeyGesture(Key.W, ModifierKeys.Control)); //CTRL + W = DELETE
             saveTask.InputGestures  .Add(new KeyGesture(Key.S, ModifierKeys.Control)); //CTRL + S = SAVE

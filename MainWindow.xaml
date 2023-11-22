@@ -49,7 +49,7 @@
                 </Grid>
             </TabItem>
 
-            <TabItem Header="Pomodoro" Name="tabPomodoro" Width="200">
+            <TabItem Header="{Binding PomodoroTabText}" Name="tabPomodoro" Width="250">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="150"/>
@@ -65,6 +65,9 @@
                         <TextBlock Text="{Binding TimerString}" TextAlignment="Center" VerticalAlignment="Center"
                                FontSize="80"/>
                     </Border>
+
+                    <ProgressBar Grid.Row="1" BorderThickness="0" Opacity="0.9" Value="75" Height="25" Margin="40"
+                                 VerticalAlignment="Bottom"/>
 
                     <TextBlock Grid.Row="2" Name="tbMotivation" TextAlignment="Center" TextWrapping="Wrap" Margin="5"
                                VerticalAlignment="Center" FontSize="35" />
