@@ -16,11 +16,11 @@
 
                 <Setter Property="TextWrapping" Value="Wrap"/>
 
-                <Setter Property="BorderBrush" Value="Gray"/>
-                <Setter Property="BorderThickness" Value="2"/>
-                <Setter Property="SelectionBrush" Value="#3700B3" />
+                <Setter Property="BorderBrush" Value="DimGray"/>
+                <Setter Property="SelectionBrush" Value="CadetBlue"/>
 
-                <Setter Property="Foreground" Value="#DDDDDD" />
+                <Setter Property="Foreground" Value="#DDDDDD"/>
+                <Setter Property="CaretBrush" Value="#DDDDDD"/>
 
             </Style>
             
