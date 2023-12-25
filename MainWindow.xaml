@@ -99,17 +99,39 @@
                         <RowDefinition Height="100"/>
                     </Grid.RowDefinitions>
 
-                    <Button Width="150" Height="60" Content="Start" FontSize="35" Background="#5F8670" Foreground="#DCD7C9"
-                            Name="btnStartTimer" Click="btnStartTimer_Click" BorderThickness="0"/>
+                    <Button Width="150" Height="60" Content="Start" FontSize="35" Foreground="#FFFFFF"
+                            Name="btnStartTimer" Click="btnStartTimer_Click" BorderThickness="0">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#225033"/> 
+
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Background="{TemplateBinding Background}">
+                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#307543"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
 
                     <Border Grid.Row="1" CornerRadius="50" Background="#a24" Height="150" Opacity="0.95"
                             Width="300" Name="borderTimer" Visibility="Hidden" VerticalAlignment="Top" Margin="0, 30">
                         <TextBlock Text="{Binding TimerString}" TextAlignment="Center" VerticalAlignment="Center"
-                               FontSize="80"/>
+                               FontSize="80" Foreground="#FFFFFF"/>
                     </Border>
 
                     <ProgressBar Grid.Row="1" BorderThickness="0" Opacity="0.9" Height="22" Margin="30, 0, 30, 10"
-                                 Visibility="Hidden" VerticalAlignment="Bottom" Name="PomodoroProgressBar" Background="GhostWhite"/>
+                                 Visibility="Hidden" VerticalAlignment="Bottom" Name="PomodoroProgressBar" Background="DimGray"/>
 
                     <TextBlock Grid.Row="2" Name="tbMotivation" TextAlignment="Center" TextWrapping="Wrap" Margin="15,0,15,15"
                                VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="35"/>

@@ -98,11 +98,11 @@ namespace ADHDPlanner.View.UserControls
         {
             if (currentStage == Stage.Undefined)
             {
-                Color = "#9F9AA4"; 
+                Color = "#FCE09B"; //FCE09B
             }
             else if (currentStage == Stage.Defined)
             {
-                Color = "#F39F5A";
+                Color = "#F39F5A"; //F39F5A
             }
             else if (currentStage == Stage.Finished)
             {

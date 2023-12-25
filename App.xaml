@@ -17,10 +17,10 @@
                 <Setter Property="TextWrapping" Value="Wrap"/>
 
                 <Setter Property="BorderBrush" Value="Gray"/>
-                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="BorderThickness" Value="2"/>
                 <Setter Property="SelectionBrush" Value="#3700B3" />
 
-                <Setter Property="Foreground" Value="#FFFFFF" />
+                <Setter Property="Foreground" Value="#DCD7C9" />
 
             </Style>
             
