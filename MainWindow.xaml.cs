@@ -26,10 +26,10 @@ namespace ADHDPlanner
         public string TimerString
         {
             get { return timerString; }
-            set 
-            { 
-                timerString = value; 
-                OnPropertyChanged(); 
+            set
+            {
+                timerString = value;
+                OnPropertyChanged();
             }
         }
 
@@ -78,13 +78,13 @@ namespace ADHDPlanner
 
             PomodoroTabText = "Pomodoro / " + TimerString;
 
-            Application.Current.Dispatcher.BeginInvoke(() => 
+            Application.Current.Dispatcher.BeginInvoke(() =>
                 PomodoroProgressBar.Value = (double)(1500 - timeout.TotalSeconds) / 15);
         }
 
         private string pomodoroTabText;
 
-        public string PomodoroTabText 
+        public string PomodoroTabText
         {
             get
             {
@@ -105,33 +105,33 @@ namespace ADHDPlanner
             switch (isRunning)
             {
                 case null:
-                {
-                    SetTimer();
+                    {
+                        SetTimer();
 
-                    btnStartTimer.Content = "Stop";
-                    
+                        btnStartTimer.Content = "Stop";
+
                         break;
-                }
+                    }
 
                 case true:
-                {
-                    pomodoroTimer.Stop();
+                    {
+                        pomodoroTimer.Stop();
 
-                    btnStartTimer.Content = "Resume";
-                    isRunning = false;
-                    
+                        btnStartTimer.Content = "Resume";
+                        isRunning = false;
+
                         break;
-                }
+                    }
 
                 case false:
-                {
-                    pomodoroTimer.Start();
+                    {
+                        pomodoroTimer.Start();
 
-                    btnStartTimer.Content = "Stop";
-                    isRunning = true;
-                 
+                        btnStartTimer.Content = "Stop";
+                        isRunning = true;
+
                         break;
-                }
+                    }
             }
         }
 
@@ -179,11 +179,13 @@ namespace ADHDPlanner
         private void Setup()
         {
             tasks.Add(new UserControls.Task() { Title = "Task #1", EstimatedTime = "hh:mm:ss" });
+            tasks.Add(new UserControls.Task() { Title = "Task #2", CurrentStage = Task.Stage.Defined });
+            tasks.Add(new UserControls.Task() { Title = "Task #3", CurrentStage = Task.Stage.Finished });
 
             PomodoroTabText = "Pomodoro";
 
             deleteTask.InputGestures.Add(new KeyGesture(Key.W, ModifierKeys.Control)); //CTRL + W = DELETE
-            saveTask.InputGestures  .Add(new KeyGesture(Key.S, ModifierKeys.Control)); //CTRL + S = SAVE
+            saveTask.InputGestures.Add(new KeyGesture(Key.S, ModifierKeys.Control)); //CTRL + S = SAVE
             createTask.InputGestures.Add(new KeyGesture(Key.T, ModifierKeys.Control)); //CTRL + T = CREATE
         }
 
@@ -285,7 +287,7 @@ namespace ADHDPlanner
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        private void OnPropertyChanged([CallerMemberName] string  propertyName = null)
+        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }

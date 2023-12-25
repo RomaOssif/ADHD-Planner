@@ -4,6 +4,27 @@
              xmlns:local="clr-namespace:ADHDPlanner"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="TextBoxNotes" TargetType="TextBox">
+                <Setter Property="AcceptsTab" Value="True"/>
+                <Setter Property="AcceptsReturn" Value="True"/>
+
+                <Setter Property="FontWeight" Value="Regular"/>
+                <Setter Property="FontFamily" Value="Coilare"/>
+                <Setter Property="FontSize" Value="24"/>
+
+                <Setter Property="TextWrapping" Value="Wrap"/>
+
+                <Setter Property="BorderBrush" Value="Gray"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="SelectionBrush" Value="#3700B3" />
+
+                <Setter Property="Foreground" Value="#FFFFFF" />
+
+            </Style>
+            
+        </ResourceDictionary>
          
     </Application.Resources>
 </Application>
