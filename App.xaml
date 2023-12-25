@@ -20,7 +20,7 @@
                 <Setter Property="BorderThickness" Value="2"/>
                 <Setter Property="SelectionBrush" Value="#3700B3" />
 
-                <Setter Property="Foreground" Value="#DCD7C9" />
+                <Setter Property="Foreground" Value="#DDDDDD" />
 
             </Style>
             

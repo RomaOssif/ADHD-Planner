@@ -73,7 +73,7 @@
             <RowDefinition Height="25"/>
         </Grid.RowDefinitions>
 
-        <TabControl BorderThickness="0">
+        <TabControl BorderThickness="0, 1, 0, 0" >
             <TabItem Header="Tasks" Name="AllTab" Width="200">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -81,7 +81,8 @@
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
 
-                    <ListView Background="#333333" ItemsSource="{Binding Tasks}" Name="taskView" 
+                    <ListView Background="#333333" ItemsSource="{Binding Tasks}" Name="taskView"
+                              BorderBrush="DimGray" BorderThickness="0, 0, 1.5, 0"
                               ScrollViewer.HorizontalScrollBarVisibility="Disabled" MouseDoubleClick="taskView_MouseDoubleClick"
                               ScrollViewer.VerticalScrollBarVisibility="Hidden" SelectionChanged="taskView_SelectionChanged">
                     </ListView>
@@ -144,7 +145,7 @@
         </TabControl>
 
         <Grid Grid.Row="1">
-            <ProgressBar Opacity="0.83" Name="pb"/>
+            <ProgressBar Opacity="0.83" Name="pb" Foreground="ForestGreen"/>
 
             <Button Content="Add task!" Click="Button_Click" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Coilare"
                 FontSize="20" Margin="0, 0, 4, 0" Background="LightGreen" Opacity="0.85" FontWeight="SemiBold"/>

@@ -6,80 +6,81 @@
              xmlns:local="clr-namespace:ADHDPlanner.View.UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="70"/>
-            <RowDefinition/>
-            <RowDefinition Height="30"/>
-        </Grid.RowDefinitions>
+    <Border BorderBrush="DimGray" BorderThickness="0, 0, 0, 0">
+        <Grid Margin="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0" >
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="120"/>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="200"/>
-            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
 
-            <!--looks to ugly for now-->
-            <!--<Image Source="C:\Temp Test Folder\5525518.png" Stretch="Uniform" Panel.ZIndex="-1"/>-->
+                <!--looks to ugly for now-->
+                <!--<Image Source="C:\Temp Test Folder\5525518.png" Stretch="Uniform" Panel.ZIndex="-1"/>-->
 
-            <Button FontSize="40" FontWeight="DemiBold" Background="IndianRed" Opacity="0.95" FontFamily="Coilare"
-                    Click="Delete_Click" Content="Delete" Foreground="White"/>
+                <Button FontSize="40" FontWeight="DemiBold" Background="IndianRed" Opacity="0.95" FontFamily="Coilare"
+                    Click="Delete_Click" Content="X" Foreground="#232323"/>
 
-            <Border Grid.Column="1" BorderBrush="Gray" BorderThickness="1.5">
-                    <TextBox FontSize="26" Margin="2" HorizontalAlignment="Center" MinWidth="300" 
-                             Text="{Binding Title}"
+                <Border Grid.Column="1" BorderBrush="Gray" BorderThickness="1.5">
+                    <TextBox FontSize="26" Margin="2" HorizontalAlignment="Center" MinWidth="300" Text="{Binding Title}"
                        TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Hidden" FontFamily="Coilare" Name="Title"
-                       FontWeight="DemiBold" Opacity="0.9" Background="Transparent" BorderThickness="0"/>
-            </Border>
-            
-            <Button Grid.Column="2" FontSize="35" FontWeight="DemiBold" Background="LightGreen" FontFamily="Coilare"
+                       FontWeight="DemiBold" Opacity="0.9" Background="Transparent" BorderThickness="0" Foreground="#DDDDDD"/>
+                </Border>
+
+                <Button Grid.Column="2" FontSize="35" FontWeight="DemiBold" Background="LightGreen" FontFamily="Coilare"
                     Opacity="0.95" Content="Define" Name="btnUpdate" Click="btnUpdate_Click"/>
-        </Grid>
+            </Grid>
 
-        <Grid Grid.Row="1" >
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="60*"/>
-                <ColumnDefinition Width="40*"/>
-            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="1" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60*"/>
+                    <ColumnDefinition Width="40*"/>
+                </Grid.ColumnDefinitions>
 
-            <TextBox Text="{Binding Description}" Margin="5, 2, 0, 0" Name="descriptionTBox"
+                <TextBox Text="{Binding Description}" Margin="0, 2, 0, 0" Name="descriptionTBox"
                      Background="Transparent" Style="{StaticResource TextBoxNotes}"/>
-            <TextBox Grid.Column="1" Text="{Binding OrderedDescription}" Name="listTBox"
+                <TextBox Grid.Column="1" Text="{Binding OrderedDescription}" Name="listTBox"
                      Margin="5, 2, 0, 0" Background="Transparent" Style="{StaticResource TextBoxNotes}"/>
-        </Grid>
+            </Grid>
 
-        <Grid Grid.Row="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="100"/>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="120"/>
-            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="120"/>
+                </Grid.ColumnDefinitions>
 
-            <Border BorderBrush="Gray" BorderThickness="1.5" Opacity="0.85">
-                <TextBox Text="{Binding EstimatedTime}" Background="Transparent" FontSize="20" FontWeight="Regular" Name="timeTB"
-                           FontFamily="Coilare" Margin="5, 2, 0, 0" BorderThickness="0"/>
-            </Border>
+                <Border BorderBrush="Gray" BorderThickness="1.5" Opacity="0.85">
+                    <TextBox Text="{Binding EstimatedTime}" Background="Transparent" FontSize="20" FontWeight="Regular" Name="timeTB"
+                           FontFamily="Coilare" Margin="5, 2, 0, 0" BorderThickness="0" Foreground="#BBBBBB"/>
+                </Border>
 
-            <Border Grid.Column="1" BorderBrush="Gray" BorderThickness="1.5">
-                <ComboBox Grid.Column="1" Text="Important urgent" FontSize="20" FontWeight="DemiBold" Name="stateCB"
+                <Border Grid.Column="1" BorderBrush="Gray" BorderThickness="1.5">
+                    <ComboBox Grid.Column="1" Text="Important urgent" FontSize="20" FontWeight="DemiBold" Name="stateCB"
                           FontFamily="Coilare" Margin="0, 0, 1, 0" Background="Transparent"
                           HorizontalContentAlignment="Center" BorderThickness="0">
-                    <ComboBoxItem Content="Important urgent" />
-                    <ComboBoxItem Content="Important not urgent" />
-                    <ComboBoxItem Content="Not important urgent" />
-                    <ComboBoxItem Content="Not important not urgent" IsSelected="True"/>
-                </ComboBox>
-            </Border>
+                        <ComboBoxItem Content="Important urgent" />
+                        <ComboBoxItem Content="Important not urgent" />
+                        <ComboBoxItem Content="Not important urgent" />
+                        <ComboBoxItem Content="Not important not urgent" IsSelected="True"/>
+                    </ComboBox>
+                </Border>
 
-            <Border Grid.Column="2" BorderBrush="Gray" BorderThickness="1.5">
-                <ComboBox FontSize="18" FontWeight="SemiBold" FontFamily="Coilare" Name="stageCB" >
-                    <ComboBoxItem Content="Undefined" IsSelected="True"/>
-                    <ComboBoxItem Content="Defined"/>
-                    <ComboBoxItem Content="Finished"/>
-                </ComboBox>
+                <Border Grid.Column="2" BorderBrush="Gray" BorderThickness="1.5">
+                    <ComboBox FontSize="18" FontWeight="SemiBold" FontFamily="Coilare" Name="stageCB" >
+                        <ComboBoxItem Content="Undefined" IsSelected="True"/>
+                        <ComboBoxItem Content="Defined"/>
+                        <ComboBoxItem Content="Finished"/>
+                    </ComboBox>
 
-            </Border>
+                </Border>
+            </Grid>
         </Grid>
-    </Grid>
+    </Border>
 </UserControl>
