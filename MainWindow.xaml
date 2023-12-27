@@ -124,13 +124,15 @@
         </TabControl>
 
         <Grid Grid.Row="1">
-            <ProgressBar Opacity="0.83" Name="pb" Foreground="ForestGreen"/>
+            <ProgressBar Name="pb"
+                         Opacity="0.83" Foreground="ForestGreen" Background="Transparent" BorderThickness="0"/>
 
-            <Button Content="Add task!" Click="Button_Click" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Coilare"
-                FontSize="20" Margin="0, 0, 4, 0" Background="LightGreen" Opacity="0.85" FontWeight="SemiBold"/>
+            <Button Style="{StaticResource ButtonFancyUI}" Click="Button_Click" Width="100"
+                    HorizontalAlignment="Left" Content="+" FontSize="20" Opacity="0.9" FontWeight="SemiBold"/>
 
-            <TextBlock HorizontalAlignment="Right" Text="0 / 1" FontWeight="SemiBold"
-                   FontSize="15" Margin="0, 0, 10, 0" Name="progressBar"/>
+            <TextBlock Name="progressBar" 
+                       HorizontalAlignment="Right" Text="0 / 1" FontWeight="SemiBold" FontSize="15" Margin="0, 0, 10, 0"
+                       Foreground="#DDDDDD"/>
         </Grid>
     </Grid>
 </Window>
