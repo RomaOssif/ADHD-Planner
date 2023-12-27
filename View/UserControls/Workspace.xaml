@@ -24,18 +24,16 @@
                 <!--looks too ugly for now :( -->
                 <!--<Image Source="C:\Temp Test Folder\5525518.png" Stretch="Uniform" Panel.ZIndex="-1"/>-->
 
-                <Button FontSize="40" FontWeight="DemiBold" Background="IndianRed" Opacity="0.95" FontFamily="Coilare"
-                    Click="Delete_Click" Content="X" Foreground="#232323"/>
+                <Button FontSize="40" FontWeight="DemiBold" FontFamily="Coilare" Click="Delete_Click"
+                        Content="X" Style="{StaticResource ButtonCancelFancyUI}"/>
 
-                <Border Grid.Column="1" BorderBrush="Gray" BorderThickness="1.5">
-                    <TextBox FontSize="26" Margin="2" HorizontalAlignment="Center" MinWidth="300" Text="{Binding Title}"
+                <TextBox Grid.Column="1" FontSize="26" Margin="2" HorizontalAlignment="Center" MinWidth="100" Text="{Binding Title}"
                        TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Hidden" 
-                       FontFamily="Coilare" Name="Title" CaretBrush="#DDDDDD"
+                       FontFamily="Coilare" Name="Title" CaretBrush="#DDDDDD" SelectionBrush="CadetBlue"
                        FontWeight="DemiBold" Opacity="0.9" Background="Transparent" BorderThickness="0" Foreground="#DDDDDD"/>
-                </Border>
 
-                <Button Grid.Column="2" FontSize="35" FontWeight="DemiBold" Background="LightGreen" FontFamily="Coilare"
-                    Opacity="0.95" Content="Define" Name="btnUpdate" Click="btnUpdate_Click"/>
+                <Button Grid.Column="2" FontWeight="DemiBold" Content="Define" Name="btnUpdate" FontFamily="Coilare"
+                        Click="btnUpdate_Click" Style="{StaticResource ButtonFancyUI}"/>
             </Grid>
 
             <Grid Grid.Row="1" >
@@ -44,9 +42,9 @@
                     <ColumnDefinition Width="40*"/>
                 </Grid.ColumnDefinitions>
 
-                <TextBox Text="{Binding Description}" Margin="0, 2, 0, 0" Name="descriptionTBox" BorderThickness="0, 0, 2, 0"
+                <TextBox Text="{Binding Description}" Margin="0, 2, 0, 0" Name="descriptionTBox" BorderThickness="0, 1, 2, 0"
                      Background="Transparent" Style="{StaticResource TextBoxNotes}"/>
-                <TextBox Grid.Column="1" Text="{Binding OrderedDescription}" Name="listTBox" BorderThickness="2, 0, 0, 0"
+                <TextBox Grid.Column="1" Text="{Binding OrderedDescription}" Name="listTBox" BorderThickness="2, 1, 0, 0"
                      Margin="5, 2, 0, 0" Background="Transparent" Style="{StaticResource TextBoxNotes}"/>
             </Grid>
 
@@ -58,8 +56,9 @@
                 </Grid.ColumnDefinitions>
 
                 <Border BorderBrush="Gray" BorderThickness="1.5" Opacity="0.85">
-                    <TextBox Text="{Binding EstimatedTime}" Background="Transparent" FontSize="20" FontWeight="Regular" Name="timeTB"
-                           FontFamily="Coilare" Margin="5, 2, 0, 0" BorderThickness="0" Foreground="#BBBBBB" CaretBrush="#BBBBBB"/>
+                    <TextBox Text="{Binding EstimatedTime}" Background="Transparent" FontSize="20"
+                             FontWeight="Regular" Name="timeTB" FontFamily="Coilare" Margin="5, 2, 0, 0"
+                             BorderThickness="0" SelectionBrush="CadetBlue" Foreground="#BBBBBB" CaretBrush="#BBBBBB"/>
                 </Border>
 
                 <Border Grid.Column="1" BorderBrush="Gray" BorderThickness="1.5">
