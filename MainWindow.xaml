@@ -88,7 +88,7 @@
                     </ListView>
 
                     <userControls:Workspace Grid.Column="1" x:Name="workspace" ButtonBase.Click="workspace_Click"
-                                            Visibility="Hidden" IsEnabled="False"/>
+                                            Visibility="Hidden" IsEnabled="False" Margin="15, 0, 0, 0"/>
                 </Grid>
             </TabItem>
 

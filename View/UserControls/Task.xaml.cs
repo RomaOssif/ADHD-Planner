@@ -77,7 +77,7 @@ namespace ADHDPlanner.View.UserControls
             get { return title; }
             set 
             {
-                title = value;
+                title = value.Trim();
                 OnPropertyChanged();
             }
         }
@@ -137,7 +137,7 @@ namespace ADHDPlanner.View.UserControls
             get { return description; }
             set 
             {
-                description = value; 
+                description = value.Trim(); 
                 OnPropertyChanged();
             }
         }
@@ -149,7 +149,7 @@ namespace ADHDPlanner.View.UserControls
             get { return orderedDescription; }
             set 
             { 
-                orderedDescription = value; 
+                orderedDescription = value.Trim(); 
                 OnPropertyChanged();
             }
         }

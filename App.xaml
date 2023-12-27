@@ -6,23 +6,35 @@
     <Application.Resources>
         <ResourceDictionary>
 
-            <Style x:Key="TextBoxNotes" TargetType="TextBox">
+            <Style x:Key="TextBoxFancyUI" TargetType="TextBox">
                 <Setter Property="AcceptsTab" Value="True"/>
                 <Setter Property="AcceptsReturn" Value="True"/>
 
                 <Setter Property="FontWeight" Value="Regular"/>
-                <Setter Property="FontFamily" Value="Coilare"/>
+                <!--<Setter Property="FontFamily" Value="Coilare"/>--> <!--there's no such font-->
                 <Setter Property="FontSize" Value="24"/>
 
                 <Setter Property="TextWrapping" Value="Wrap"/>
 
+                <Setter Property="BorderThickness" Value="0"/>
                 <Setter Property="BorderBrush" Value="DimGray"/>
+                
                 <Setter Property="SelectionBrush" Value="CadetBlue"/>
-
-                <Setter Property="Foreground" Value="#DDDDDD"/>
                 <Setter Property="CaretBrush" Value="#DDDDDD"/>
 
+                <Setter Property="Foreground" Value="#DDDDDD"/>
+                <Setter Property="Background" Value="Transparent"/>
+
+                <Style.Triggers>
+                    <Trigger Property="IsFocused" Value="True">
+                        <Setter Property="Background" Value="#333333"/>
+                    </Trigger>
+                </Style.Triggers>
+                
             </Style>
+
+            <!--<Style x:Key="TextBoxFancyUI" BasedOn="{StaticResource TextBoxFancyUI}" TargetType="TextBox">
+            </Style>-->
 
             <Style x:Key="ButtonFancyUI" TargetType="Button">
                 <Setter Property="Background" Value="#225033"/>
@@ -50,6 +62,7 @@
             <Style x:Key="ButtonCancelFancyUI" BasedOn="{StaticResource ButtonFancyUI}" TargetType="Button">
                 <Setter Property="Background" Value="#a5223c"/>
                 <Setter Property="Opacity" Value="0.95"/>
+                <Setter Property="FontWeight" Value="DemiBold"/>
 
                 <Style.Triggers>
                     <Trigger Property="IsMouseOver" Value="True">
