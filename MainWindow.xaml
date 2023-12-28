@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:ADHDPlanner"
         xmlns:userControls="clr-namespace:ADHDPlanner.View.UserControls"
         mc:Ignorable="d" 
+        WindowStyle="None" MouseLeftButtonDown="Window_MouseLeftButtonDown"
         Style="{StaticResource WindowFancyUI}"
         Icon="C:\Temp Test Folder\d31ca7be-0497-4370-801f-97a29dc3b584.png"
         Title="ADHD Planner" Height="600" Width="1200">
@@ -21,7 +22,22 @@
             <RowDefinition Height="25"/>
         </Grid.RowDefinitions>
 
-        <TabControl BorderThickness="0, 1, 0, 0" Style="{StaticResource TabControlFancyUI}" >
+        <Grid Height="50" Width="180" VerticalAlignment="Top" HorizontalAlignment="Right" Panel.ZIndex="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button Style="{StaticResource ButtonTitleBar}" Content="—" Name="btnHideShow" Grid.Column="0"
+                        Click="btnHideShow_Click"/>
+            <Button Style="{StaticResource ButtonTitleBar}" Content="▢" Name="btnMinMax" Grid.Column="1"
+                        Click="btnMinMax_Click"/>
+            <Button Style="{StaticResource ButtonTitleBar}" Content="X" Name="btnClose" Grid.Column="2"
+                        Click="btnClose_Click"/>
+        </Grid>
+
+        <TabControl Grid.Row="0" BorderThickness="0, 1, 0, 0" Style="{StaticResource TabControlFancyUI}" >
             <TabItem Header="Tasks" Name="AllTab" Style="{StaticResource TabItemFancyUI}">
                 <Grid>
                     <Grid.ColumnDefinitions>

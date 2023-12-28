@@ -296,5 +296,26 @@ namespace ADHDPlanner
         {
             AddTask();
         }
+
+        private void btnHideShow_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+
+        private void btnMinMax_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = (WindowState == WindowState.Maximized) ? WindowState.Normal : WindowState.Maximized; 
+        }
+
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            //this.Close();
+            Application.Current.Shutdown();
+        }
+
+        private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
     }
 }
