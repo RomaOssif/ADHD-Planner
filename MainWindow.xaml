@@ -22,7 +22,7 @@
             <RowDefinition Height="25"/>
         </Grid.RowDefinitions>
 
-        <Grid Height="50" Width="180" VerticalAlignment="Top" HorizontalAlignment="Right" Panel.ZIndex="1">
+        <Grid Height="50" Width="150" VerticalAlignment="Top" HorizontalAlignment="Right" Panel.ZIndex="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
