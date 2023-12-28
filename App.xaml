@@ -11,14 +11,13 @@
                 <Setter Property="AcceptsReturn" Value="True"/>
 
                 <Setter Property="FontWeight" Value="Regular"/>
-                <!--<Setter Property="FontFamily" Value="Coilare"/>--> <!--there's no such font-->
                 <Setter Property="FontSize" Value="24"/>
 
                 <Setter Property="TextWrapping" Value="Wrap"/>
 
                 <Setter Property="BorderThickness" Value="0"/>
                 <Setter Property="BorderBrush" Value="DimGray"/>
-                
+
                 <Setter Property="SelectionBrush" Value="CadetBlue"/>
                 <Setter Property="CaretBrush" Value="#DDDDDD"/>
 
@@ -30,11 +29,8 @@
                         <Setter Property="Background" Value="#333333"/>
                     </Trigger>
                 </Style.Triggers>
-                
-            </Style>
 
-            <!--<Style x:Key="TextBoxFancyUI" BasedOn="{StaticResource TextBoxFancyUI}" TargetType="TextBox">
-            </Style>-->
+            </Style>
 
             <Style x:Key="ButtonFancyUI" TargetType="Button">
                 <Setter Property="Background" Value="#225033"/>
@@ -56,7 +52,7 @@
                         <Setter Property="Background" Value="#307543"/>
                     </Trigger>
                 </Style.Triggers>
-                
+
             </Style>
 
             <Style x:Key="ButtonCancelFancyUI" BasedOn="{StaticResource ButtonFancyUI}" TargetType="Button">
@@ -70,6 +66,59 @@
                     </Trigger>
                 </Style.Triggers>
             </Style>
+
+            <Style x:Key="TabItemFancyUI" TargetType="TabItem">
+                <Setter Property="FontSize" Value="28"/>
+                <Setter Property="Foreground" Value="#101010"/>
+                
+                <Setter Property="Width" Value="auto" />
+                <Setter Property="MinWidth" Value="200"/>
+                <Setter Property="Padding" Value="10"/>
+
+                <Setter Property="Content">
+                    <Setter.Value>
+                        <Setter Property="BorderThickness" Value="0"/>
+                    </Setter.Value>
+                </Setter>
+
+                <Setter Property="Template">
+                    <Setter.Value>
+
+                        <ControlTemplate TargetType="TabItem" x:Name="ContentSite">
+                            <Grid Name="Panel">
+                                <ContentPresenter VerticalAlignment="Center"
+                                              HorizontalAlignment="Center"
+                                              Height="50"
+                                              ContentSource="Header" />
+                            </Grid>
+
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter TargetName="Panel" Property="Background" Value="#DCD7C9"/>
+                                </Trigger>
+
+                                <Trigger Property="IsSelected" Value="False">
+                                    <Setter TargetName="Panel" Property="ItemsControl.Background" Value="#2C3639"/>
+                                    <Setter TargetName="Panel" Property="ItemsControl.Foreground" Value="Cyan"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="TabControlFancyUI" TargetType="TabControl">
+                <Setter Property="Background" Value="Transparent"/>
+            </Style>
+
+            <Style x:Key="WindowFancyUI" TargetType="Window">
+                <Setter Property="Background" Value="Transparent"/>
+            </Style>
+            
+            <!--<Style x:Key="ListViewItemFancyUI" TargetType="ListViewItem">
+                <Setter Property="MinWidth" Value="340"/>    to work on these two!!
+            </Style>-->
 
         </ResourceDictionary>
 
