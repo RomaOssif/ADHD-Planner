@@ -4,142 +4,15 @@
              xmlns:local="clr-namespace:ADHDPlanner"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+        <!--Styles Resource Dictionary-->
         <ResourceDictionary>
-
-            <Style x:Key="TextBoxFancyUI" TargetType="TextBox">
-                <Setter Property="AcceptsTab" Value="True"/>
-                <Setter Property="AcceptsReturn" Value="True"/>
-
-                <Setter Property="FontWeight" Value="Regular"/>
-                <Setter Property="FontSize" Value="24"/>
-
-                <Setter Property="TextWrapping" Value="Wrap"/>
-
-                <Setter Property="BorderThickness" Value="0"/>
-                <Setter Property="BorderBrush" Value="DimGray"/>
-
-                <Setter Property="SelectionBrush" Value="CadetBlue"/>
-                <Setter Property="CaretBrush" Value="#DDDDDD"/>
-
-                <Setter Property="Foreground" Value="#DDDDDD"/>
-                <Setter Property="Background" Value="Transparent"/>
-
-                <Style.Triggers>
-                    <Trigger Property="IsFocused" Value="True">
-                        <Setter Property="Background" Value="#333333"/>
-                    </Trigger>
-                </Style.Triggers>
-
-            </Style>
-
-            <Style x:Key="ButtonFancyUI" TargetType="Button">
-                <Setter Property="Background" Value="#225033"/>
-                <Setter Property="Foreground" Value="#FFFFFF"/>
-                <Setter Property="FontSize" Value="35"/>
-
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="Button">
-                            <Border Background="{TemplateBinding Background}">
-                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                            </Border>
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-
-                <Style.Triggers>
-                    <Trigger Property="IsMouseOver" Value="True">
-                        <Setter Property="Background" Value="#307543"/>
-                    </Trigger>
-                </Style.Triggers>
-
-            </Style>
-
-            <Style x:Key="ButtonCancelFancyUI" BasedOn="{StaticResource ButtonFancyUI}" TargetType="Button">
-                <Setter Property="Background" Value="#a5223c"/>
-                <Setter Property="Opacity" Value="0.95"/>
-                <Setter Property="FontWeight" Value="DemiBold"/>
-
-                <Style.Triggers>
-                    <Trigger Property="IsMouseOver" Value="True">
-                        <Setter Property="Background" Value="#cb3448"/>
-                    </Trigger>
-                </Style.Triggers>
-            </Style>
-
-            <Style x:Key="TabItemFancyUI" TargetType="TabItem">
-                <Setter Property="FontSize" Value="28"/>
-                <Setter Property="Foreground" Value="#101010"/>
-
-                <Setter Property="Width" Value="auto" />
-                <Setter Property="MinWidth" Value="200"/>
-                <Setter Property="Padding" Value="10"/>
-
-                <Setter Property="Content">
-                    <Setter.Value>
-                        <Setter Property="BorderThickness" Value="0"/>
-                    </Setter.Value>
-                </Setter>
-
-                <Setter Property="Template">
-                    <Setter.Value>
-
-                        <ControlTemplate TargetType="TabItem" x:Name="ContentSite">
-                            <Grid Name="Panel">
-                                <ContentPresenter VerticalAlignment="Center"
-                                              HorizontalAlignment="Center"
-                                              Height="50"
-                                              ContentSource="Header" />
-                            </Grid>
-
-                            <ControlTemplate.Triggers>
-                                <Trigger Property="IsSelected" Value="True">
-                                    <Setter TargetName="Panel" Property="Background" Value="#DCD7C9"/>
-                                </Trigger>
-
-                                <Trigger Property="IsSelected" Value="False">
-                                    <Setter TargetName="Panel" Property="ItemsControl.Background" Value="#2C3639"/>
-                                    <Setter TargetName="Panel" Property="ItemsControl.Foreground" Value="Cyan"/>
-                                </Trigger>
-                            </ControlTemplate.Triggers>
-                        </ControlTemplate>
-
-                    </Setter.Value>
-                </Setter>
-            </Style>
-
-            <Style x:Key="TabControlFancyUI" TargetType="TabControl">
-                <Setter Property="Background" Value="Transparent"/>
-            </Style>
-
-            <Style x:Key="WindowFancyUI" TargetType="Window">
-                <Setter Property="Background" Value="Transparent"/>
-
-                <Setter Property="WindowChrome.WindowChrome">
-                    <Setter.Value>
-                        <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0"/>
-                    </Setter.Value>
-                </Setter>
-            </Style>
-
-            <!--<Style x:Key="ListViewItemFancyUI" TargetType="ListViewItem">
-                <Setter Property="MinWidth" Value="340"/>    to work on these two!!
-            </Style>-->
-
-            <Style x:Key="ButtonTitleBar" BasedOn="{StaticResource ButtonFancyUI}" TargetType="Button">
-                <Setter Property="Width" Value="50"/>
-                <Setter Property="Height" Value="50"/>
-                <Setter Property="Background" Value="Transparent"/>
-                <Setter Property="FontSize" Value="22"/>
-
-                <Style.Triggers>
-                    <Trigger Property="IsMouseOver" Value="True">
-                        <Setter Property="Background" Value="#555555"/>
-                    </Trigger>
-                </Style.Triggers>
-            </Style>
-
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/ButtonStyles.xaml"/>
+                <ResourceDictionary Source="Styles/TextBoxStyles.xaml"/>
+                <ResourceDictionary Source="Styles/WindowRelatedStyles.xaml"/>
+                <ResourceDictionary Source="Styles/TabControlStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
-
+        
     </Application.Resources>
 </Application>
