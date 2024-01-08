@@ -14,7 +14,6 @@
 
   <ItemGroup>
     <Resource Include="Images\pomodoroLogo.ico" />
-    <Resource Include="Images\pomodoroLogo.png" />
   </ItemGroup>
 
 </Project>

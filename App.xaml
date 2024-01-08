@@ -6,14 +6,12 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <!--Style Resource Dictionaries-->
+                <!--Styles-->
                 <ResourceDictionary Source="Styles/ButtonStyles.xaml"/>
                 <ResourceDictionary Source="Styles/TextBoxStyles.xaml"/>
                 <ResourceDictionary Source="Styles/WindowRelatedStyles.xaml"/>
                 <ResourceDictionary Source="Styles/TabControlStyles.xaml"/>
 
-                <!--Image Resource Dictionaries-->
-                <!--<ResourceDictionary Source="Images/IconsDictionary.xaml"/>-->
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
