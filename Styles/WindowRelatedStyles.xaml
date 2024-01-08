@@ -9,6 +9,8 @@
                 <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0"/>
             </Setter.Value>
         </Setter>
+
+        <!--<Setter Property="Icon" Value="..\Images\pomodoroLogo.ico"/>-->
     </Style>
 
 </ResourceDictionary>

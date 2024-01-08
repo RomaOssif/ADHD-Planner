@@ -8,7 +8,6 @@
         mc:Ignorable="d" 
         WindowStyle="None" MouseLeftButtonDown="Window_MouseLeftButtonDown"
         Style="{StaticResource WindowFancyUI}"
-        Icon="C:\Temp Test Folder\d31ca7be-0497-4370-801f-97a29dc3b584.png"
         Title="ADHD Planner" Height="600" Width="1200">
     <Window.CommandBindings>
         <CommandBinding Command="{x:Static local:MainWindow.deleteTask}" Executed="DeleteTabCtrlW" />
