@@ -10,7 +10,7 @@
             </Setter.Value>
         </Setter>
 
-        <!--<Setter Property="Icon" Value="..\Images\pomodoroLogo.ico"/>-->
+        <Setter Property="Icon" Value="..\Images\pomodoroLogo.png"/>
     </Style>
 
 </ResourceDictionary>

@@ -7,4 +7,14 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Images\pomodoroLogo.ico" />
+    <None Remove="Images\pomodoroLogo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\pomodoroLogo.ico" />
+    <Resource Include="Images\pomodoroLogo.png" />
+  </ItemGroup>
+
 </Project>
